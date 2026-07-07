@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">PFTAndroidMockProject</string>
+    <string name="app_name">FPTHealthTracker</string>
+    <string name="dashboard">dashboard</string>
+    <string name="meals">meals</string>
+    <string name="activities">activities</string>
+    <string name="statistics">statistics</string>
+    <string name="settings">settings</string>
 </resources>

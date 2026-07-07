@@ -1,2 +1,0 @@
-package com.example.pftandroidmockproject.domain.repository_inteface
-
