@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PFTAndroidMockProject</string>
+    <string name="dashboard">Trang chủ</string>
+    <string name="meals">Bữa ăn</string>
+    <string name="activities">Hoạt động</string>
+    <string name="statistics">Thống kê</string>
+    <string name="settings">Cài đặt</string>
+    <string name="gender_male">Nam</string>
+    <string name="gender_female">Nữ</string>
+
+    <string name="meal_breakfast">Bữa sáng</string>
+    <string name="meal_lunch">Bữa trưa</string>
+    <string name="meal_dinner">Bữa tối</string>
+    <string name="meal_snack">Bữa phụ</string>
+
+    <string name="goal_lose_weight">Giảm cân</string>
+    <string name="goal_maintain_weight">Giữ cân</string>
+    <string name="goal_gain_weight">Tăng cân</string>
+
+    <string name="activity_level_sedentary">Ít vận động (Ít tập thể dục)</string>
+    <string name="activity_level_light">Vận động nhẹ (1–3 ngày/tuần)</string>
+    <string name="activity_level_moderate">Vận động vừa phải (3–5 ngày/tuần)</string>
+    <string name="activity_level_active">Vận động nhiều (Tập luyện 6–7 ngày/tuần)</string>
+    <string name="activity_level_very_active">Vận động rất nhiều (tập luyện cường độ cao)</string>
+</resources>
