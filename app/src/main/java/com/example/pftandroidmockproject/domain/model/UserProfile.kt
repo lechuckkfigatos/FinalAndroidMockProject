@@ -11,5 +11,4 @@ data class UserProfile (
     val heightCm : Double,
     val activityLevel: ActivityLevel,
     val goal : WeightGoal
-
 )
