@@ -8,11 +8,11 @@ class CalculateMealCaloriesUseCase @Inject constructor(
     val mealCaloriesCalculator: MealCaloriesCalculator
 ) {
     operator fun invoke(
-        food: Food,
+        caloriesPerServing: Int,
         serving : Double
     ): Int{
         return mealCaloriesCalculator.calculateMealCalories(
-            caloriesPerServing = food.caloriesPerServing,
+            caloriesPerServing = caloriesPerServing,
             serving = serving
         )
     }

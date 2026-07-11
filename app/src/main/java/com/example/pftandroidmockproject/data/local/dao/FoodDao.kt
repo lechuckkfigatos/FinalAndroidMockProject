@@ -10,13 +10,14 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface FoodDao {
 
-    @Query("SELECT * FROM foods ORDER BY name ASC")
+    @Query("SELECT * FROM foods ORDER BY nameVi ASC")
     fun getAllFoods(): Flow<List<FoodEntity>>
 
     @Query("""
         SELECT * FROM foods 
-        WHERE name LIKE '%' || :query || '%' 
-        ORDER BY name ASC
+        WHERE nameEn LIKE '%' || :query || '%' 
+           OR nameVi LIKE '%' || :query || '%'
+        ORDER BY nameVi ASC
     """)
     fun searchFoods(query: String): Flow<List<FoodEntity>>
 

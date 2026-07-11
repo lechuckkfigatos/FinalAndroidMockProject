@@ -5,37 +5,219 @@ import com.example.pftandroidmockproject.data.local.entity.FoodEntity
 object FoodSeedData {
 
     val foods = listOf(
-        FoodEntity(name = "Cơm trắng", caloriesPerServing = 130, servingDescription = "100g"),
-        FoodEntity(name = "Trứng gà luộc", caloriesPerServing = 78, servingDescription = "1 quả"),
-        FoodEntity(name = "Phở bò", caloriesPerServing = 350, servingDescription = "1 tô nhỏ"),
-        FoodEntity(name = "Bánh mì", caloriesPerServing = 265, servingDescription = "1 ổ"),
-        FoodEntity(name = "Ức gà", caloriesPerServing = 165, servingDescription = "100g"),
-        FoodEntity(name = "Thịt bò", caloriesPerServing = 250, servingDescription = "100g"),
-        FoodEntity(name = "Cá hồi", caloriesPerServing = 208, servingDescription = "100g"),
-        FoodEntity(name = "Cá ngừ", caloriesPerServing = 132, servingDescription = "100g"),
-        FoodEntity(name = "Tôm luộc", caloriesPerServing = 99, servingDescription = "100g"),
-        FoodEntity(name = "Đậu phụ", caloriesPerServing = 76, servingDescription = "100g"),
+        FoodEntity(
+            nameVi = "Cơm trắng",
+            nameEn = "White rice",
+            caloriesPerServing = 130,
+            servingDescriptionVi = "100g",
+            servingDescriptionEn = "100g"
+        ),
+        FoodEntity(
+            nameVi = "Phở bò",
+            nameEn = "Beef pho",
+            caloriesPerServing = 350,
+            servingDescriptionVi = "1 tô nhỏ",
+            servingDescriptionEn = "1 small bowl"
+        ),
+        FoodEntity(
+            nameVi = "Phở gà",
+            nameEn = "Chicken pho",
+            caloriesPerServing = 320,
+            servingDescriptionVi = "1 tô nhỏ",
+            servingDescriptionEn = "1 small bowl"
+        ),
+        FoodEntity(
+            nameVi = "Bún chả",
+            nameEn = "Bun cha (Grilled pork with noodles)",
+            caloriesPerServing = 450,
+            servingDescriptionVi = "1 suất",
+            servingDescriptionEn = "1 serving"
+        ),
+        FoodEntity(
+            nameVi = "Bánh mì kẹp thịt",
+            nameEn = "Vietnamese Banh mi",
+            caloriesPerServing = 400,
+            servingDescriptionVi = "1 ổ",
+            servingDescriptionEn = "1 loaf"
+        ),
+        FoodEntity(
+            nameVi = "Cơm tấm sườn nướng",
+            nameEn = "Broken rice with grilled pork chop",
+            caloriesPerServing = 600,
+            servingDescriptionVi = "1 đĩa",
+            servingDescriptionEn = "1 plate"
+        ),
+        FoodEntity(
+            nameVi = "Bún bò Huế",
+            nameEn = "Hue beef noodle soup",
+            caloriesPerServing = 480,
+            servingDescriptionVi = "1 tô",
+            servingDescriptionEn = "1 bowl"
+        ),
+        FoodEntity(
+            nameVi = "Thịt kho tàu",
+            nameEn = "Caramelized pork with eggs",
+            caloriesPerServing = 160,
+            servingDescriptionVi = "100g",
+            servingDescriptionEn = "100g"
+        ),
 
-        FoodEntity(name = "Sữa tươi không đường", caloriesPerServing = 60, servingDescription = "100ml"),
-        FoodEntity(name = "Sữa chua", caloriesPerServing = 100, servingDescription = "1 hộp"),
-        FoodEntity(name = "Chuối", caloriesPerServing = 105, servingDescription = "1 quả"),
-        FoodEntity(name = "Táo", caloriesPerServing = 95, servingDescription = "1 quả"),
-        FoodEntity(name = "Cam", caloriesPerServing = 62, servingDescription = "1 quả"),
-        FoodEntity(name = "Bơ", caloriesPerServing = 160, servingDescription = "100g"),
-        FoodEntity(name = "Khoai lang", caloriesPerServing = 86, servingDescription = "100g"),
-        FoodEntity(name = "Khoai tây", caloriesPerServing = 77, servingDescription = "100g"),
-        FoodEntity(name = "Bông cải xanh", caloriesPerServing = 55, servingDescription = "100g"),
-        FoodEntity(name = "Rau cải", caloriesPerServing = 25, servingDescription = "100g"),
+        FoodEntity(
+            nameVi = "Trứng gà luộc",
+            nameEn = "Boiled egg",
+            caloriesPerServing = 78,
+            servingDescriptionVi = "1 quả",
+            servingDescriptionEn = "1 egg"
+        ),
+        FoodEntity(
+            nameVi = "Ức gà áp chảo",
+            nameEn = "Pan-seared chicken breast",
+            caloriesPerServing = 165,
+            servingDescriptionVi = "100g",
+            servingDescriptionEn = "100g"
+        ),
+        FoodEntity(
+            nameVi = "Thịt bò nạc nướng",
+            nameEn = "Grilled lean beef",
+            caloriesPerServing = 250,
+            servingDescriptionVi = "100g",
+            servingDescriptionEn = "100g"
+        ),
+        FoodEntity(
+            nameVi = "Cá hồi nướng",
+            nameEn = "Grilled salmon",
+            caloriesPerServing = 200,
+            servingDescriptionVi = "100g",
+            servingDescriptionEn = "100g"
+        ),
+        FoodEntity(
+            nameVi = "Đậu hũ luộc",
+            nameEn = "Boiled tofu",
+            caloriesPerServing = 76,
+            servingDescriptionVi = "100g",
+            servingDescriptionEn = "100g"
+        ),
 
-        FoodEntity(name = "Mì gói", caloriesPerServing = 380, servingDescription = "1 gói"),
-        FoodEntity(name = "Bún bò", caloriesPerServing = 450, servingDescription = "1 tô"),
-        FoodEntity(name = "Bún chả", caloriesPerServing = 500, servingDescription = "1 suất"),
-        FoodEntity(name = "Cơm tấm", caloriesPerServing = 600, servingDescription = "1 đĩa"),
-        FoodEntity(name = "Xôi", caloriesPerServing = 400, servingDescription = "1 gói"),
-        FoodEntity(name = "Cháo thịt", caloriesPerServing = 250, servingDescription = "1 bát"),
-        FoodEntity(name = "Salad rau", caloriesPerServing = 120, servingDescription = "1 phần"),
-        FoodEntity(name = "Nước cam", caloriesPerServing = 110, servingDescription = "1 ly"),
-        FoodEntity(name = "Cà phê sữa", caloriesPerServing = 150, servingDescription = "1 ly"),
-        FoodEntity(name = "Trà sữa", caloriesPerServing = 450, servingDescription = "1 ly")
+        FoodEntity(
+            nameVi = "Ức gà chiên giòn",
+            nameEn = "Fried chicken breast",
+            caloriesPerServing = 260,
+            servingDescriptionVi = "100g",
+            servingDescriptionEn = "100g"
+        ),
+        FoodEntity(
+            nameVi = "Khoai tây chiên",
+            nameEn = "French fries",
+            caloriesPerServing = 312,
+            servingDescriptionVi = "100g",
+            servingDescriptionEn = "100g"
+        ),
+        FoodEntity(
+            nameVi = "Hamburger bò",
+            nameEn = "Beef burger",
+            caloriesPerServing = 295,
+            servingDescriptionVi = "1 cái",
+            servingDescriptionEn = "1 burger"
+        ),
+        FoodEntity(
+            nameVi = "Pizza hải sản",
+            nameEn = "Seafood pizza",
+            caloriesPerServing = 250,
+            servingDescriptionVi = "1 miếng",
+            servingDescriptionEn = "1 slice"
+        ),
+        FoodEntity(
+            nameVi = "Mì Ý sốt bò bằm",
+            nameEn = "Spaghetti Bolognese",
+            caloriesPerServing = 350,
+            servingDescriptionVi = "1 đĩa",
+            servingDescriptionEn = "1 plate"
+        ),
+
+        FoodEntity(
+            nameVi = "Quả chuối tiêu",
+            nameEn = "Banana",
+            caloriesPerServing = 89,
+            servingDescriptionVi = "1 quả vừa",
+            servingDescriptionEn = "1 medium banana"
+        ),
+        FoodEntity(
+            nameVi = "Quả táo",
+            nameEn = "Apple",
+            caloriesPerServing = 52,
+            servingDescriptionVi = "1 quả vừa",
+            servingDescriptionEn = "1 medium apple"
+        ),
+        FoodEntity(
+            nameVi = "Quả bơ",
+            nameEn = "Avocado",
+            caloriesPerServing = 160,
+            servingDescriptionVi = "100g",
+            servingDescriptionEn = "100g"
+        ),
+        FoodEntity(
+            nameVi = "Súp lơ xanh luộc",
+            nameEn = "Boiled broccoli",
+            caloriesPerServing = 35,
+            servingDescriptionVi = "100g",
+            servingDescriptionEn = "100g"
+        ),
+        FoodEntity(
+            nameVi = "Khoai lang luộc",
+            nameEn = "Boiled sweet potato",
+            caloriesPerServing = 86,
+            servingDescriptionVi = "100g",
+            servingDescriptionEn = "100g"
+        ),
+
+        FoodEntity(
+            nameVi = "Sữa tươi không đường",
+            nameEn = "Unsweetened whole milk",
+            caloriesPerServing = 62,
+            servingDescriptionVi = "100ml",
+            servingDescriptionEn = "100ml"
+        ),
+        FoodEntity(
+            nameVi = "Sữa chua không đường",
+            nameEn = "Unsweetened yogurt",
+            caloriesPerServing = 65,
+            servingDescriptionVi = "1 hộp (100g)",
+            servingDescriptionEn = "1 cup (100g)"
+        ),
+        FoodEntity(
+            nameVi = "Cà phê đen đá không đường",
+            nameEn = "Iced black coffee (No sugar)",
+            caloriesPerServing = 2,
+            servingDescriptionVi = "1 ly",
+            servingDescriptionEn = "1 cup"
+        ),
+        FoodEntity(
+            nameVi = "Cà phê sữa đá",
+            nameEn = "Vietnamese iced milk coffee",
+            caloriesPerServing = 180,
+            servingDescriptionVi = "1 ly",
+            servingDescriptionEn = "1 cup"
+        ),
+        FoodEntity(
+            nameVi = "Trà sữa trân châu truyền thống",
+            nameEn = "Classic pearl milk tea",
+            caloriesPerServing = 450,
+            servingDescriptionVi = "1 ly vừa",
+            servingDescriptionEn = "1 medium cup"
+        ),
+        FoodEntity(
+            nameVi = "Bánh quy bơ",
+            nameEn = "Butter cookies",
+            caloriesPerServing = 500,
+            servingDescriptionVi = "100g",
+            servingDescriptionEn = "100g"
+        ),
+        FoodEntity(
+            nameVi = "Hạt hạnh nhân",
+            nameEn = "Almonds",
+            caloriesPerServing = 579,
+            servingDescriptionVi = "100g",
+            servingDescriptionEn = "100g"
+        )
     )
 }

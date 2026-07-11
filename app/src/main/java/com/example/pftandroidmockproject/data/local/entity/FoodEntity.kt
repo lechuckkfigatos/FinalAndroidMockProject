@@ -7,8 +7,14 @@ import androidx.room.PrimaryKey
 data class FoodEntity (
     @PrimaryKey(autoGenerate = true)
     val id : Int = 0,
-    val name : String,
-    val servingDescription : String,
+
+    val nameVi : String,
+    val nameEn : String,
+
+    val servingDescriptionVi : String,
+    val servingDescriptionEn : String,
+
+
     val caloriesPerServing : Int,
     val isCustom : Boolean = false
 )

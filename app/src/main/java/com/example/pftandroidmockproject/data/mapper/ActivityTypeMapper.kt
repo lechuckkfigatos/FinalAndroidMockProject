@@ -2,11 +2,15 @@ package com.example.pftandroidmockproject.data.mapper
 
 import com.example.pftandroidmockproject.data.local.entity.ActivityTypeEntity
 import com.example.pftandroidmockproject.domain.model.ActivityType
+import com.example.pftandroidmockproject.domain.model.LocalizedText
 
 fun ActivityTypeEntity.toDomain(): ActivityType {
     return ActivityType(
         id = id,
-        name = name,
+        name = LocalizedText(
+            vi = nameVi,
+            en = nameEn
+        ),
         metValue = metValue
     )
 }
@@ -14,7 +18,8 @@ fun ActivityTypeEntity.toDomain(): ActivityType {
 fun ActivityType.toEntity(): ActivityTypeEntity {
     return ActivityTypeEntity(
         id = id,
-        name = name,
+        nameEn = name.en,
+        nameVi = name.vi,
         metValue = metValue
     )
 }

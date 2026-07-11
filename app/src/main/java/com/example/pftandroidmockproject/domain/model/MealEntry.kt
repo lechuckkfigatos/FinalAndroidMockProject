@@ -7,13 +7,16 @@ data class MealEntry (
     val date : LocalDate,
     val mealType: MealType,
 
-    val foodId: Int,
+    // null nếu user tự nhập
+    val foodId: Int?,
 
     //meal snapshot
-    val foodNameSnapshot : String,
-    val servingDescriptionSnapshot : String,
+    val foodNameSnapshot : LocalizedText,
+    val servingDescriptionSnapshot : LocalizedText,
     val caloriesPerServingSnapshot: Int,
 
     val serving: Double,
-    val totalCalories : Int
+    val totalCalories : Int,
+
+    val isCustom : Boolean
 )

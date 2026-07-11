@@ -2,6 +2,7 @@ package com.example.pftandroidmockproject.data.mapper
 
 import com.example.pftandroidmockproject.data.local.entity.ActivityEntryEntity
 import com.example.pftandroidmockproject.domain.model.ActivityEntry
+import com.example.pftandroidmockproject.domain.model.LocalizedText
 import java.time.LocalDate
 
 fun ActivityEntryEntity.toDomain() : ActivityEntry {
@@ -9,7 +10,11 @@ fun ActivityEntryEntity.toDomain() : ActivityEntry {
         id = id,
         date = LocalDate.ofEpochDay(date),
         activityTypeId = activityTypeId,
-        activityNameSnapshot = activityNameSnapshot,
+
+        activityNameSnapshot = LocalizedText(
+            vi = activityNameSnapshotVi,
+            en = activityNameSnapshotEn),
+
         metValueSnapshot = metValueSnapshot,
         durationMinutes = durationMinutes,
         caloriesBurned =caloriesBurned
@@ -21,7 +26,10 @@ fun ActivityEntry.toEntity(): ActivityEntryEntity {
         id = id,
         date = date.toEpochDay(),
         activityTypeId = activityTypeId,
-        activityNameSnapshot = activityNameSnapshot,
+
+        activityNameSnapshotEn = activityNameSnapshot.en,
+        activityNameSnapshotVi = activityNameSnapshot.vi,
+
         metValueSnapshot = metValueSnapshot,
         durationMinutes = durationMinutes,
         caloriesBurned = caloriesBurned

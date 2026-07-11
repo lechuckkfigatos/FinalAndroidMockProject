@@ -2,13 +2,20 @@ package com.example.pftandroidmockproject.data.mapper
 
 import com.example.pftandroidmockproject.data.local.entity.FoodEntity
 import com.example.pftandroidmockproject.domain.model.Food
+import com.example.pftandroidmockproject.domain.model.LocalizedText
 
 fun FoodEntity.toDomain() : Food {
     return Food(
         id = id,
-        name = name,
+        name = LocalizedText(
+            vi = nameVi,
+            en = nameEn
+        ),
         caloriesPerServing = caloriesPerServing ,
-        servingDescription = servingDescription,
+        servingDescription = LocalizedText(
+            vi = servingDescriptionVi,
+            en = servingDescriptionEn
+        ),
         isCustom = isCustom
     )
 }
@@ -16,8 +23,12 @@ fun FoodEntity.toDomain() : Food {
 fun Food.toEntity() : FoodEntity{
     return FoodEntity(
         id = id,
-        name = name,
-        servingDescription = servingDescription ,
+        nameVi = name.vi,
+        nameEn = name.en,
+
+        servingDescriptionVi = servingDescription.vi ,
+        servingDescriptionEn = servingDescription.en ,
+
         caloriesPerServing = caloriesPerServing,
         isCustom = isCustom
     )

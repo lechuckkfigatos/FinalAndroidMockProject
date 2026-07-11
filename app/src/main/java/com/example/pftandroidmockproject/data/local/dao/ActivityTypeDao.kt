@@ -9,13 +9,14 @@ import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface ActivityTypeDao {
-    @Query("SELECT * FROM activity_types ORDER BY name ASC")
+    @Query("SELECT * FROM activity_types ORDER BY nameVi ASC")
     fun getAllActivityTypes(): Flow<List<ActivityTypeEntity>>
 
     @Query("""
         SELECT * FROM activity_types
-        WHERE name LIKE "%" || :query || "%"
-        ORDER BY name ASC
+        WHERE nameVi LIKE "%" || :query || "%"
+           OR nameEn LIKE "%" || :query || "%"
+        ORDER BY nameVi ASC
     """)
     fun searchActivityTypes(query: String): Flow<List<ActivityTypeEntity>>
 

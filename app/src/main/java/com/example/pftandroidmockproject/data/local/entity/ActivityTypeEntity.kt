@@ -8,6 +8,8 @@ data class ActivityTypeEntity(
     @PrimaryKey(autoGenerate = true)
     val id : Int = 0,
 
-    val name : String,
+    val nameEn : String,
+    val nameVi : String,
+
     val metValue : Double,
 )

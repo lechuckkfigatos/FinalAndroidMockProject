@@ -10,7 +10,10 @@ data class ActivityEntryEntity(
     val date: Long,
     val activityTypeId : Int,
 
-    val activityNameSnapshot: String,
+    val activityNameSnapshotVi: String,
+    val activityNameSnapshotEn: String,
+
+
     val metValueSnapshot: Double,
 
     val durationMinutes: Int,

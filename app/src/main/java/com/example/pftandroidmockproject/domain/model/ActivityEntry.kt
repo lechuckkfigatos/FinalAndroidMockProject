@@ -8,7 +8,7 @@ data class ActivityEntry(
     val activityTypeId : Int,
 
     //activity snapshot
-    val activityNameSnapshot : String,
+    val activityNameSnapshot : LocalizedText,
     val metValueSnapshot: Double,
 
     val durationMinutes : Int ,

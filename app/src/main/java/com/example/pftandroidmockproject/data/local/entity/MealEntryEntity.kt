@@ -10,12 +10,20 @@ data class MealEntryEntity(
 
     val date : Long,
     val mealType : String,
-    val foodId : Int,
 
-    val foodNameSnapshot : String,
-    val servingDescriptionSnapshot : String,
+    // null nếu user tự nhập món
+    val foodId : Int?,
+
+    val foodNameSnapshotVi : String,
+    val foodNameSnapshotEn : String,
+
+    val servingDescriptionSnapshotVi : String,
+    val servingDescriptionSnapshotEn : String,
+
     val caloriesPerServingSnapshot : Int,
 
     val serving : Double,
-    val totalCalories : Int
+    val totalCalories : Int,
+
+    val isCustom: Boolean
 )
