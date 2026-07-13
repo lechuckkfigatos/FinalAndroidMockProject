@@ -23,4 +23,14 @@
     <string name="activity_level_moderate">Vận động vừa phải (3–5 ngày/tuần)</string>
     <string name="activity_level_active">Vận động nhiều (Tập luyện 6–7 ngày/tuần)</string>
     <string name="activity_level_very_active">Vận động rất nhiều (tập luyện cường độ cao)</string>
+
+    <string name="profile_saved">Đã lưu hồ sơ thành công</string>
+    <string name="error_full_name_required">Vui lòng nhập họ tên</string>
+    <string name="error_birth_date_required">Vui lòng chọn ngày sinh</string>
+    <string name="error_gender_required">Vui lòng chọn giới tính</string>
+    <string name="error_weight_invalid">Cân nặng không hợp lệ</string>
+    <string name="error_height_invalid">Chiều cao không hợp lệ</string>
+    <string name="error_activity_level_required">Vui lòng chọn mức độ hoạt động</string>
+    <string name="error_goal_required">Vui lòng chọn mục tiêu</string>
+    <string name="error_save_profile_failed">Không thể lưu hồ sơ</string>
 </resources>

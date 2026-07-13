@@ -21,7 +21,7 @@ private fun validate(profile: UserProfile){
     }
 
     require(profile.dateOfBirth.isBefore(LocalDate.now())) {
-        "Invalid date of birth "
+        "Invalid date of birth"
     }
 
     require(profile.weightKg > 0) {

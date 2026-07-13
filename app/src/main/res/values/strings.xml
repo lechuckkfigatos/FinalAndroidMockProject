@@ -22,4 +22,14 @@
     <string name="activity_level_moderate">Moderate (3–5 days/week)</string>
     <string name="activity_level_active">Active (6–7 days/week)</string>
     <string name="activity_level_very_active">Very Active (Intense Exercise)</string>
+
+    <string name="profile_saved">Profile saved successfully</string>
+    <string name="error_full_name_required">Full name is required</string>
+    <string name="error_birth_date_required">Invalid date of birth</string>
+    <string name="error_gender_required">Gender is required</string>
+    <string name="error_weight_invalid">Invalid Weight</string>
+    <string name="error_height_invalid">Invalid Height</string>
+    <string name="error_activity_level_required">Activity level is required</string>
+    <string name="error_goal_required">Goal is required</string>
+    <string name="error_save_profile_failed">Could not save profile</string>
 </resources>

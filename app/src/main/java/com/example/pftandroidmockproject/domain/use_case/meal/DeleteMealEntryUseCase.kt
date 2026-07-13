@@ -9,7 +9,7 @@ class DeleteMealEntryUseCase @Inject constructor(
 
     suspend operator fun invoke(entryId: Int) {
         require(entryId > 0) {
-            "Meal entry id is invalid"
+            "Invalid meal entry"
         }
 
         mealRepository.deleteMealEntry(entryId)
