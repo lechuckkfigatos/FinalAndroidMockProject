@@ -26,7 +26,6 @@ fun MealEntryEntity.toDomain() : MealEntry {
         caloriesPerServingSnapshot = caloriesPerServingSnapshot,
         serving = serving,
         totalCalories = totalCalories,
-        isCustom = isCustom
 
     )
 }
@@ -46,7 +45,6 @@ fun MealEntry.toEntity() : MealEntryEntity{
 
         caloriesPerServingSnapshot = caloriesPerServingSnapshot,
         serving = serving,
-        totalCalories = totalCalories,
-        isCustom = isCustom
+        totalCalories = totalCalories
     )
 }

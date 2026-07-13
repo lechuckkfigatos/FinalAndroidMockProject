@@ -8,7 +8,9 @@ import com.example.pftandroidmockproject.domain.repository.FoodRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import javax.inject.Inject
+import javax.inject.Singleton
 
+@Singleton
 class FoodRepositoryImpl @Inject constructor(
     private val foodDao: FoodDao
 ) : FoodRepository {
@@ -25,7 +27,17 @@ class FoodRepositoryImpl @Inject constructor(
                 .map { it.toDomain() }}
     }
 
-    override suspend fun addFood(food: Food) {
-        return foodDao.insertFood(food.toEntity())
+    override suspend fun getFoodById(foodId: Int): Food? {
+        return foodDao.getFoodById(foodId)?.toDomain()
+    }
+
+    override suspend fun addFood(food: Food): Food {
+        val newId = foodDao.insertFood(food.toEntity()).toInt()
+
+        return food.copy(id = newId)
+    }
+
+    override suspend fun updateFood(food: Food) {
+        foodDao.updateFood(food.toEntity())
     }
 }

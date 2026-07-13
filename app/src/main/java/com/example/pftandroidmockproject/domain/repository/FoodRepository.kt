@@ -9,5 +9,9 @@ interface FoodRepository {
 
     fun searchFoods(query : String):Flow<List<Food>>
 
-    suspend fun addFood(food: Food)
+    suspend fun getFoodById(foodId: Int): Food?
+
+    suspend fun addFood(food: Food): Food
+
+    suspend fun updateFood(food: Food)
 }

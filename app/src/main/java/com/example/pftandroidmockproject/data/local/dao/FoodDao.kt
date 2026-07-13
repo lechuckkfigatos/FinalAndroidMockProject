@@ -4,6 +4,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import androidx.room.Update
 import com.example.pftandroidmockproject.data.local.entity.FoodEntity
 import kotlinx.coroutines.flow.Flow
 
@@ -21,12 +22,18 @@ interface FoodDao {
     """)
     fun searchFoods(query: String): Flow<List<FoodEntity>>
 
+    @Query("SELECT * FROM foods WHERE id = :foodId")
+    suspend fun getFoodById(foodId: Int): FoodEntity?
+
     @Query("SELECT COUNT(*) FROM foods")
     suspend fun countFoods(): Int
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertFood(food: FoodEntity)
+    suspend fun insertFood(food: FoodEntity): Long
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertFoods(foods: List<FoodEntity>)
+
+    @Update
+    suspend fun updateFood(food: FoodEntity)
 }

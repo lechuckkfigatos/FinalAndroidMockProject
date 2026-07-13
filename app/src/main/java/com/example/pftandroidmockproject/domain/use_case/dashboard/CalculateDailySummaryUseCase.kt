@@ -5,7 +5,7 @@ import com.example.pftandroidmockproject.domain.model.DailyCalorieSummary
 import com.example.pftandroidmockproject.domain.model.MealEntry
 import javax.inject.Inject
 
-class CalculateDailySummeryUseCase @Inject constructor() {
+class CalculateDailySummaryUseCase @Inject constructor() {
 
     operator fun invoke(
         targetCalories: Int,

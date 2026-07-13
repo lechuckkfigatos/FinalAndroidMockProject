@@ -17,6 +17,8 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
+
+//@Binds : bind 2 class với nhau
 abstract class RepositoryModule {
     @Binds
     @Singleton
