@@ -11,6 +11,7 @@
     <string name="cm">cm</string>
 
     <!-- Navigation -->
+    <string name="onboarding">Giới thiệu</string>
     <string name="dashboard">Tổng quan</string>
     <string name="meals">Bữa ăn</string>
     <string name="activities">Hoạt động</string>
@@ -92,4 +93,5 @@
     <string name="date_hint">Enter date</string>
     <string name="full_name_hint">ENTER NAME</string>
     <string name="health_tracker">HEALTH TRACKER</string>
+
 </resources>

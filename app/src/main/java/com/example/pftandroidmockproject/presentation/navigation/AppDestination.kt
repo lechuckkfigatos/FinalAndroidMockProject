@@ -7,6 +7,11 @@ sealed class AppDestination(
     val route: String,
     @StringRes val titleRes : Int
 ) {
+    data object Onboarding : AppDestination(
+        route = "onboarding",
+        titleRes = R.string.onboarding
+    )
+
     data object Dashboard : AppDestination(
         route = "dashboard",
         titleRes = R.string.dashboard

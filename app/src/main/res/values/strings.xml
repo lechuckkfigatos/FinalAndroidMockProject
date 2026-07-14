@@ -11,6 +11,7 @@
     <string name="cm">cm</string>
 
     <!-- Navigation -->
+    <string name="onboarding">Onboarding</string>
     <string name="dashboard">Dashboard</string>
     <string name="meals">Meals</string>
     <string name="activities">Activities</string>
@@ -92,4 +93,5 @@
     <string name="date_hint">Enter date</string>
     <string name="full_name_hint">ENTER NAME</string>
     <string name="health_tracker">HEALTH TRACKER</string>
+
 </resources>
