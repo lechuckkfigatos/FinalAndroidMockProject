@@ -142,6 +142,8 @@ class ProfileViewModel @Inject constructor(
             }
         }
     }
+
+    //nếu k phải ng dùng cũ thì dừng coroutine, cho họ điền thông tin
     private fun loadExistingProfile() {
         viewModelScope.launch {
             _uiState.update {
@@ -175,6 +177,7 @@ class ProfileViewModel @Inject constructor(
         }
     }
 
+    //tính real time tdee và bmi nếu người dùng nhập đủ
     private fun updateHealthPreview() {
         val profile = buildProfileOrNull() ?: run {
             _uiState.update {
@@ -199,6 +202,7 @@ class ProfileViewModel @Inject constructor(
         }
     }
 
+    //validation
     private fun buildProfileOrNull(): UserProfile? {
         val state = _uiState.value
 

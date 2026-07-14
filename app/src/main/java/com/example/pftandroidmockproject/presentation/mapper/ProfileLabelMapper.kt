@@ -3,6 +3,7 @@ package com.example.pftandroidmockproject.presentation.mapper
 import androidx.annotation.StringRes
 import com.example.pftandroidmockproject.R
 import com.example.pftandroidmockproject.domain.model.ActivityLevel
+import com.example.pftandroidmockproject.domain.model.BmiCategory
 import com.example.pftandroidmockproject.domain.model.Gender
 import com.example.pftandroidmockproject.domain.model.MealType
 import com.example.pftandroidmockproject.domain.model.WeightGoal
@@ -42,5 +43,15 @@ fun ActivityLevel.labelRes(): Int {
         ActivityLevel.MODERATE -> R.string.activity_level_moderate
         ActivityLevel.ACTIVE -> R.string.activity_level_active
         ActivityLevel.VERY_ACTIVE -> R.string.activity_level_very_active
+    }
+}
+
+@StringRes
+fun BmiCategory.labelRes(): Int {
+    return when (this) {
+        BmiCategory.UNDERWEIGHT -> R.string.bmi_underweight
+        BmiCategory.NORMAL -> R.string.bmi_normal
+        BmiCategory.OVERWEIGHT -> R.string.bmi_overweight
+        BmiCategory.OBESE -> R.string.bmi_obese
     }
 }

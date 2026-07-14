@@ -1,35 +1,95 @@
 <resources>
-    <string name="app_name">FPTHealthTracker</string>
+    <string name="app_name">HealthTracker</string>
+
+    <!-- Common -->
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="confirm">Confirm</string>
+    <string name="select">Select</string>
+    <string name="kcal">kcal</string>
+    <string name="kg">kg</string>
+    <string name="cm">cm</string>
+
+    <!-- Navigation -->
     <string name="dashboard">Dashboard</string>
     <string name="meals">Meals</string>
     <string name="activities">Activities</string>
     <string name="statistics">Statistics</string>
     <string name="settings">Settings</string>
+
+    <!-- Onboarding Screen / Edit Profile Screen -->
+    <string name="onboarding_title">Set up your profile</string>
+    <string name="onboarding_subtitle">We use this information to calculate your daily calorie target.</string>
+    <string name="full_name">Full name</string>
+    <string name="date_of_birth">Date of birth</string>
+    <string name="gender">Gender</string>
+    <string name="weight">Weight</string>
+    <string name="height">Height</string>
+    <string name="activity_level">Activity level</string>
+    <string name="goal">Goal</string>
+    <string name="daily_calorie_target">Daily calorie target</string>
+    <string name="bmi">BMI</string>
+    <string name="save_profile">Save profile</string>
+    <string name="profile_saved">Profile saved successfully</string>
+
+    <!-- Gender Labels -->
     <string name="gender_male">Male</string>
     <string name="gender_female">Female</string>
 
-    <string name="meal_breakfast">Breakfast</string>
-    <string name="meal_lunch">Lunch</string>
-    <string name="meal_dinner">Dinner</string>
-    <string name="meal_snack">Snack</string>
+    <!-- Activity Level Labels -->
+    <string name="activity_level_sedentary">Sedentary</string>
+    <string name="activity_level_light">Lightly active</string>
+    <string name="activity_level_moderate">Moderately active</string>
+    <string name="activity_level_active">Very active</string>
+    <string name="activity_level_very_active">Extremely active</string>
 
-    <string name="goal_lose_weight">Lose Weight</string>
-    <string name="goal_maintain_weight">Maintain Weight</string>
-    <string name="goal_gain_weight">Gain Weight</string>
+    <!-- Goal Labels -->
+    <string name="goal_lose_weight">Lose weight</string>
+    <string name="goal_maintain_weight">Maintain weight</string>
+    <string name="goal_gain_weight">Gain weight</string>
 
-    <string name="activity_level_sedentary">Sedentary (Little exercise)</string>
-    <string name="activity_level_light">Light (1–3 days/week)</string>
-    <string name="activity_level_moderate">Moderate (3–5 days/week)</string>
-    <string name="activity_level_active">Active (6–7 days/week)</string>
-    <string name="activity_level_very_active">Very Active (Intense Exercise)</string>
+    <!-- BMI Labels -->
+    <string name="bmi_underweight">Underweight</string>
+    <string name="bmi_normal">Normal</string>
+    <string name="bmi_overweight">Overweight</string>
+    <string name="bmi_obese">Obese</string>
 
-    <string name="profile_saved">Profile saved successfully</string>
+    <!-- Profile Validation Messages -->
     <string name="error_full_name_required">Full name is required</string>
-    <string name="error_birth_date_required">Invalid date of birth</string>
+    <string name="error_birth_date_required">Date of birth is required</string>
     <string name="error_gender_required">Gender is required</string>
-    <string name="error_weight_invalid">Invalid Weight</string>
-    <string name="error_height_invalid">Invalid Height</string>
+    <string name="error_weight_invalid">Weight must be valid</string>
+    <string name="error_height_invalid">Height must be valid</string>
     <string name="error_activity_level_required">Activity level is required</string>
     <string name="error_goal_required">Goal is required</string>
     <string name="error_save_profile_failed">Could not save profile</string>
+
+    <!-- Dashboard Screen -->
+    <string name="calories_intake_today">Calories intake today</string>
+    <string name="calories_burned_today">Calories burned today</string>
+    <string name="remaining_calories">Remaining calories</string>
+
+    <!-- Meal Log Screen -->
+    <string name="add_meal">Add meal</string>
+    <string name="search_food">Search food</string>
+    <string name="serving">Serving</string>
+    <string name="calories_per_serving">Calories per serving</string>
+
+    <!-- Activity Log Screen -->
+    <string name="add_activity">Add activity</string>
+    <string name="search_activity">Search activity</string>
+    <string name="duration_minutes">Duration in minutes</string>
+
+    <!-- Meals of the day -->
+    <string name="meal_lunch">Lunch</string>
+    <string name="meal_dinner">Dinner</string>
+    <string name="meal_snack">Snack</string>
+    <string name="meal_breakfast">Breakfast</string>
+    <string name="select_date">Select date</string>
+    <string name="activity_low">LOW</string>
+    <string name="activity_high">HIGH</string>
+    <string name="select_option">SELECT</string>
+    <string name="date_hint">Enter date</string>
+    <string name="full_name_hint">ENTER NAME</string>
+    <string name="health_tracker">HEALTH TRACKER</string>
 </resources>

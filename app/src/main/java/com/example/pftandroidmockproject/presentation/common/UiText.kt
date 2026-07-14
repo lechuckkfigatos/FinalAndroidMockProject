@@ -1,5 +1,6 @@
 package com.example.pftandroidmockproject.presentation.common
 
+import android.content.Context
 import androidx.annotation.StringRes
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
@@ -25,5 +26,13 @@ fun UiText.asString(): String {
         //"args.toTypedArray()" biến list thành array
         // "*" ném phần tử bên trong thành biến đơn lẻ
         is UiText.StringResource -> stringResource(resId, *args.toTypedArray())
+    }
+}
+
+//LaunchedEffect ko gọi đc stringResource() nên convert = context
+fun UiText.asString(context: Context): String {
+    return when (this) {
+        is UiText.DynamicString -> value
+        is UiText.StringResource -> context.getString(resId, *args.toTypedArray())
     }
 }
