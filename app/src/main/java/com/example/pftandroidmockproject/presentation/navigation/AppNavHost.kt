@@ -14,6 +14,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.example.pftandroidmockproject.presentation.dashboard.DashboardScreen
 import com.example.pftandroidmockproject.presentation.profile.OnboardingScreen
 
 @Composable
@@ -46,8 +47,13 @@ fun AppNavHost(
         composable(
             route = AppDestination.Dashboard.route
         ) {
-            PlaceholderScreen(
-                destination = AppDestination.Dashboard
+            DashboardScreen(
+                onAddMealClick = {
+                    navController.navigateToBottomDestination(AppDestination.Meals)
+                },
+                onAddActivityClick = {
+                    navController.navigateToBottomDestination(AppDestination.Activities)
+                }
             )
         }
 

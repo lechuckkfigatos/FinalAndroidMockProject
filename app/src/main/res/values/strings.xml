@@ -69,6 +69,27 @@
     <string name="calories_intake_today">Calories intake today</string>
     <string name="calories_burned_today">Calories burned today</string>
     <string name="remaining_calories">Remaining calories</string>
+    <string name="target_calories">Target calories</string>
+    <string name="net_calories">Net calories</string>
+    <string name="calorie_progress">Calorie progress</string>
+    <string name="dashboard_advice">Advice</string>
+    <string name="dashboard_advice_over_target">You are over your target by about %1$d kcal.</string>
+    <string name="dashboard_advice_near_target">You are close to your daily target.</string>
+    <string name="dashboard_advice_need_more">You still need about %1$d kcal today.</string>
+    <string name="no_profile_found">No profile found. Please set up your profile first.</string>
+    <string name="previous_day">Previous day</string>
+    <string name="next_day">Next day</string>
+
+    <string name="dashboard_title">Daily overview</string>
+    <string name="dashboard_subtitle">Track your calorie intake and physical activity.</string>
+
+    <string name="dashboard_summary_title">Today’s summary</string>
+    <string name="dashboard_advice_title">Daily insight</string>
+    <string name="dashboard_quick_actions">Quick actions</string>
+
+    <string name="today">Today</string>
+    <string name="back_to_today">Back to today</string>
+
 
     <!-- Meal Log Screen -->
     <string name="add_meal">Add meal</string>

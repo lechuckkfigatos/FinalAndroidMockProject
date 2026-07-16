@@ -39,14 +39,7 @@ fun HealthTrackerApp(
                 HealthTrackerBottomBar(
                     currentRoute = currentRoute,
                     onDestinationClick = { destination ->
-                        navController.navigate(destination.route) {
-                            launchSingleTop = true
-                            restoreState = true
-
-                            popUpTo(AppDestination.Dashboard.route) {
-                                saveState = true
-                            }
-                        }
+                        navController.navigateToBottomDestination(destination)
                     }
                 )
             }

@@ -69,7 +69,26 @@
     <string name="calories_intake_today">Calo đã nạp hôm nay</string>
     <string name="calories_burned_today">Calo đã tiêu thụ hôm nay</string>
     <string name="remaining_calories">Calo còn lại</string>
+    <string name="target_calories">Mục tiêu calo</string>
+    <string name="net_calories">Calo cân bằng</string>
+    <string name="calorie_progress">Tiến độ calo</string>
+    <string name="dashboard_advice">Lời khuyên</string>
+    <string name="dashboard_advice_over_target">Bạn đã vượt mục tiêu khoảng %1$d kcal.</string>
+    <string name="dashboard_advice_near_target">Bạn đang gần đạt mục tiêu hôm nay.</string>
+    <string name="dashboard_advice_need_more">Bạn còn thiếu khoảng %1$d kcal hôm nay.</string>
+    <string name="no_profile_found">Không tìm thấy hồ sơ. Vui lòng thiết lập hồ sơ trước.</string>
+    <string name="previous_day">Ngày trước</string>
+    <string name="next_day">Ngày sau</string>
 
+    <string name="dashboard_title">Tổng quan hằng ngày</string>
+    <string name="dashboard_subtitle">Theo dõi lượng calo và hoạt động thể chất của bạn.</string>
+
+    <string name="dashboard_summary_title">Tóm tắt hôm nay</string>
+    <string name="dashboard_advice_title">Gợi ý hôm nay</string>
+    <string name="dashboard_quick_actions">Thao tác nhanh</string>
+
+    <string name="today">Hôm nay</string>
+    <string name="back_to_today">Quay lại hôm nay</string>
     <!-- Meal Log Screen -->
     <string name="add_meal">Thêm bữa ăn</string>
     <string name="search_food">Tìm món ăn</string>
