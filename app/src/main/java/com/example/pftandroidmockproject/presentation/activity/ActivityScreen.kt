@@ -58,6 +58,7 @@ import com.example.pftandroidmockproject.domain.model.ActivityEntry
 import com.example.pftandroidmockproject.domain.model.ActivityType
 import com.example.pftandroidmockproject.domain.model.LocalizedText
 import com.example.pftandroidmockproject.presentation.common.asString
+import com.example.pftandroidmockproject.presentation.profile.components.HealthTrackerHeader
 import com.example.pftandroidmockproject.presentation.theme.HealthBackgroundBottom
 import com.example.pftandroidmockproject.presentation.theme.HealthBackgroundTop
 import com.example.pftandroidmockproject.presentation.theme.HealthGreen
@@ -147,32 +148,28 @@ private fun ActivityLogContent(
                 color = MaterialTheme.colorScheme.outlineVariant
             )
 
-            ActivityDateCard(
-                selectedDate = uiState.selectedDate,
-                totalBurnedCalories = uiState.totalBurnedCalories,
-                onPreviousDayClick = onPreviousDayClick,
-                onNextDayClick = onNextDayClick,
-                onTodayClick = onTodayClick,
-                modifier = Modifier.padding(
-                    start = 16.dp,
-                    top = 10.dp,
-                    end = 16.dp,
-                    bottom = 8.dp
-                )
-            )
-
             LazyColumn(
                 modifier = Modifier
                     .fillMaxWidth()
                     .weight(1f),
                 contentPadding = PaddingValues(
                     start = 16.dp,
-                    top = 6.dp,
+                    top = 10.dp,
                     end = 16.dp,
                     bottom = 28.dp
                 ),
                 verticalArrangement = Arrangement.spacedBy(14.dp)
             ) {
+                item {
+                    ActivityDateCard(
+                        selectedDate = uiState.selectedDate,
+                        totalBurnedCalories = uiState.totalBurnedCalories,
+                        onPreviousDayClick = onPreviousDayClick,
+                        onNextDayClick = onNextDayClick,
+                        onTodayClick = onTodayClick
+                    )
+                }
+
                 item {
                     AddActivityButton(
                         onClick = {
@@ -230,20 +227,28 @@ private fun StaticActivityHeader(
                 horizontal = 16.dp,
                 vertical = 14.dp
             ),
-        verticalArrangement = Arrangement.spacedBy(3.dp)
+        verticalArrangement = Arrangement.spacedBy(10.dp)
     ) {
-        Text(
-            text = stringResource(R.string.activity_log_title),
-            style = MaterialTheme.typography.headlineSmall,
-            fontWeight = FontWeight.Bold,
-            color = MaterialTheme.colorScheme.onSurface
+        HealthTrackerHeader(
+            title = stringResource(R.string.health_tracker)
         )
 
-        Text(
-            text = stringResource(R.string.activity_log_subtitle),
-            style = MaterialTheme.typography.bodyMedium,
-            color = MaterialTheme.colorScheme.onSurfaceVariant
-        )
+        Column(
+            verticalArrangement = Arrangement.spacedBy(3.dp)
+        ) {
+            Text(
+                text = stringResource(R.string.activity_log_title),
+                style = MaterialTheme.typography.headlineSmall,
+                fontWeight = FontWeight.Bold,
+                color = MaterialTheme.colorScheme.onSurface
+            )
+
+            Text(
+                text = stringResource(R.string.activity_log_subtitle),
+                style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.onSurfaceVariant
+            )
+        }
     }
 }
 

@@ -78,6 +78,10 @@ fun StaticMealHeader(
             ),
         verticalArrangement = Arrangement.spacedBy(10.dp)
     ) {
+        HealthTrackerHeader(
+            title = stringResource(R.string.health_tracker)
+        )
+
         Column(
             verticalArrangement = Arrangement.spacedBy(3.dp)
         ) {

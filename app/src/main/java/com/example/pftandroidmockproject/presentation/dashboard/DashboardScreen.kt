@@ -15,6 +15,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -76,108 +77,134 @@ private fun DashboardContent(
                 )
             )
     ) {
-        LazyColumn(
-            modifier = Modifier.fillMaxSize(),
-            contentPadding = PaddingValues(
-                start = 16.dp,
-                top = 14.dp,
-                end = 16.dp,
-                bottom = 28.dp
-            ),
-            verticalArrangement = Arrangement.spacedBy(14.dp)
+        Column(
+            modifier = Modifier.fillMaxSize()
         ) {
-            item {
-                HealthTrackerHeader(
-                    title = stringResource(R.string.health_tracker)
-                )
-            }
+            StaticDashboardHeader()
 
-            item {
-                DashboardIntroduction()
-            }
+            HorizontalDivider(
+                color = MaterialTheme.colorScheme.outlineVariant
+            )
 
-            item {
-                DashboardHeader(
-                    selectedDate = uiState.selectedDate
-                )
-            }
-
-            when {
-                uiState.isLoading -> {
-                    item {
-                        DashboardLoadingCard()
-                    }
+            LazyColumn(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .weight(1f),
+                contentPadding = PaddingValues(
+                    start = 16.dp,
+                    top = 14.dp,
+                    end = 16.dp,
+                    bottom = 28.dp
+                ),
+                verticalArrangement = Arrangement.spacedBy(14.dp)
+            ) {
+                item {
+                    DashboardHeader(
+                        selectedDate = uiState.selectedDate
+                    )
                 }
 
-                uiState.errorMessage != null -> {
-                    item {
-                        DashboardMessageCard(
-                            message = uiState.errorMessage
-                        )
+                when {
+                    uiState.isLoading -> {
+                        item {
+                            DashboardLoadingCard()
+                        }
                     }
-                }
 
-                !uiState.hasProfile -> {
-                    item {
-                        DashboardMessageCard(
-                            message = stringResource(
-                                R.string.no_profile_found
+                    uiState.errorMessage != null -> {
+                        item {
+                            DashboardMessageCard(
+                                message = uiState.errorMessage
                             )
-                        )
-                    }
-                }
-
-                else -> {
-                    item {
-                        CalorieProgressCard(
-                            uiState = uiState
-                        )
+                        }
                     }
 
-                    item {
-                        DashboardSectionTitle(
-                            title = stringResource(
-                                R.string.dashboard_summary_title
+                    !uiState.hasProfile -> {
+                        item {
+                            DashboardMessageCard(
+                                message = stringResource(
+                                    R.string.no_profile_found
+                                )
                             )
-                        )
+                        }
                     }
 
-                    item {
-                        DashboardSummarySection(
-                            uiState = uiState
-                        )
-                    }
-
-                    item {
-                        DashboardSectionTitle(
-                            title = stringResource(
-                                R.string.dashboard_advice_title
+                    else -> {
+                        item {
+                            CalorieProgressCard(
+                                uiState = uiState
                             )
-                        )
-                    }
+                        }
 
-                    item {
-                        DashboardAdviceCard(
-                            uiState = uiState
-                        )
-                    }
-
-                    item {
-                        DashboardSectionTitle(
-                            title = stringResource(
-                                R.string.dashboard_quick_actions
+                        item {
+                            DashboardSectionTitle(
+                                title = stringResource(
+                                    R.string.dashboard_summary_title
+                                )
                             )
-                        )
-                    }
+                        }
 
-                    item {
-                        DashboardShortcutSection(
-                            onAddMealClick = onAddMealClick,
-                            onAddActivityClick = onAddActivityClick
-                        )
+                        item {
+                            DashboardSummarySection(
+                                uiState = uiState
+                            )
+                        }
+
+                        item {
+                            DashboardSectionTitle(
+                                title = stringResource(
+                                    R.string.dashboard_advice_title
+                                )
+                            )
+                        }
+
+                        item {
+                            DashboardAdviceCard(
+                                uiState = uiState
+                            )
+                        }
+
+                        item {
+                            DashboardSectionTitle(
+                                title = stringResource(
+                                    R.string.dashboard_quick_actions
+                                )
+                            )
+                        }
+
+                        item {
+                            DashboardShortcutSection(
+                                onAddMealClick = onAddMealClick,
+                                onAddActivityClick = onAddActivityClick
+                            )
+                        }
                     }
                 }
             }
         }
+    }
+}
+
+@Composable
+private fun StaticDashboardHeader(
+    modifier: Modifier = Modifier
+) {
+    Column(
+        modifier = modifier
+            .fillMaxWidth()
+            .background(
+                color = HealthBackgroundTop.copy(alpha = 0.96f)
+            )
+            .padding(
+                horizontal = 16.dp,
+                vertical = 14.dp
+            ),
+        verticalArrangement = Arrangement.spacedBy(10.dp)
+    ) {
+        HealthTrackerHeader(
+            title = stringResource(R.string.health_tracker)
+        )
+
+        DashboardIntroduction()
     }
 }

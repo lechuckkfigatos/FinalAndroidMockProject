@@ -139,6 +139,21 @@
     <string name="met_value">MET</string>
     <string name="minutes">phút</string>
 
+    <!-- Statistics Screen -->
+    <string name="statistics_title">Thống kê</string>
+    <string name="statistics_subtitle">Xem lại calo đã nạp và calo đã tiêu hao.</string>
+    <string name="weekly_overview">Tổng quan tuần</string>
+    <string name="average_intake">Trung bình nạp</string>
+    <string name="average_burned">Trung bình đốt</string>
+    <string name="average_net">Trung bình cân bằng</string>
+    <string name="total_intake">Tổng calo nạp</string>
+    <string name="total_burned">Tổng calo đốt</string>
+    <string name="best_day">Ngày tốt nhất</string>
+    <string name="no_statistics_data">Chưa có dữ liệu thống kê</string>
+    <string name="intake">Nạp</string>
+    <string name="burned">Đốt</string>
+    <string name="net">Cân bằng</string>
+
     <!-- Meals -->
     <string name="meal_lunch">Bữa trưa</string>
     <string name="meal_dinner">Bữa tối</string>

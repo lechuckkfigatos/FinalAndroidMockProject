@@ -140,7 +140,22 @@
     <string name="met_value">MET</string>
     <string name="minutes">minutes</string>
 
-    <!-- Meals of the day -->
+    <!-- Statistics Screen -->
+    <string name="statistics_title">Statistics</string>
+    <string name="statistics_subtitle">Review your calorie intake and burned calories.</string>
+    <string name="weekly_overview">Weekly overview</string>
+    <string name="average_intake">Average intake</string>
+    <string name="average_burned">Average burned</string>
+    <string name="average_net">Average net</string>
+    <string name="total_intake">Total intake</string>
+    <string name="total_burned">Total burned</string>
+    <string name="best_day">Best day</string>
+    <string name="no_statistics_data">No statistics data yet</string>
+    <string name="intake">Intake</string>
+    <string name="burned">Burned</string>
+    <string name="net">Net</string>
+
+    <!-- Meals -->
     <string name="meal_lunch">Lunch</string>
     <string name="meal_dinner">Dinner</string>
     <string name="meal_snack">Snack</string>

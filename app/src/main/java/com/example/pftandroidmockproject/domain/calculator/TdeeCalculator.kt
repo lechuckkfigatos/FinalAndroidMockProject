@@ -21,7 +21,7 @@ class TdeeCalculator @Inject constructor(
         }
     }
 
-    fun calculateTdee(profile : UserProfile) : Int {
+    fun calculateTdee(profile: UserProfile) : Int {
         val bmr = calculateBmr(profile)
         val tdeeBeforeGoal = bmr * profile.activityLevel.multiplier
         val finalTdee = tdeeBeforeGoal + profile.goal.calorieAdjustment

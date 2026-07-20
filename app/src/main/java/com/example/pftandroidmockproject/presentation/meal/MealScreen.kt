@@ -135,32 +135,28 @@ private fun MealContent(
                 color = MaterialTheme.colorScheme.outlineVariant
             )
 
-            MealDateCard(
-                selectedDate = uiState.selectedDate,
-                totalDayCalories = uiState.totalDayCalories,
-                onPreviousDayClick = onPreviousDayClick,
-                onNextDayClick = onNextDayClick,
-                onTodayClick = onTodayClick,
-                modifier = Modifier.padding(
-                    start = 16.dp,
-                    top = 10.dp,
-                    end = 16.dp,
-                    bottom = 8.dp
-                )
-            )
-
             LazyColumn(
                 modifier = Modifier
                     .fillMaxWidth()
                     .weight(1f),
                 contentPadding = PaddingValues(
                     start = 16.dp,
-                    top = 6.dp,
+                    top = 10.dp,
                     end = 16.dp,
                     bottom = 28.dp
                 ),
                 verticalArrangement = Arrangement.spacedBy(14.dp)
             ) {
+                item {
+                    MealDateCard(
+                        selectedDate = uiState.selectedDate,
+                        totalDayCalories = uiState.totalDayCalories,
+                        onPreviousDayClick = onPreviousDayClick,
+                        onNextDayClick = onNextDayClick,
+                        onTodayClick = onTodayClick
+                    )
+                }
+
                 item {
                     MealSectionTitle()
                 }
