@@ -5,7 +5,6 @@ import com.example.pftandroidmockproject.data.local.entity.ActivityTypeEntity
 object ActivityTypeSeedData {
 
     val activityTypes = listOf(
-        // 4 môn có sẵn của bạn
         ActivityTypeEntity(
             nameVi = "Đi bộ",
             nameEn = "Walking",
@@ -27,7 +26,6 @@ object ActivityTypeSeedData {
             metValue = 8.0
         ),
 
-        // === 15 MÔN THỂ THAO & BÀI TẬP BỔ SUNG ===
         ActivityTypeEntity(
             nameVi = "Tập Gym (Kháng lực/Tạ nặng)",
             nameEn = "Weight lifting / Resistance training",

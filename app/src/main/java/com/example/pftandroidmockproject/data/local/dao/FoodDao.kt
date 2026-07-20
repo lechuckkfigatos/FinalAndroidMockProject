@@ -28,10 +28,10 @@ interface FoodDao {
     @Query("SELECT COUNT(*) FROM foods")
     suspend fun countFoods(): Int
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    @Insert(onConflict = OnConflictStrategy.ABORT)
     suspend fun insertFood(food: FoodEntity): Long
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertFoods(foods: List<FoodEntity>)
 
     @Update

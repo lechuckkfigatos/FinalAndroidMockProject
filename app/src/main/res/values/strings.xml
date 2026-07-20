@@ -90,17 +90,55 @@
     <string name="today">Today</string>
     <string name="back_to_today">Back to today</string>
 
-
     <!-- Meal Log Screen -->
     <string name="add_meal">Add meal</string>
     <string name="search_food">Search food</string>
     <string name="serving">Serving</string>
     <string name="calories_per_serving">Calories per serving</string>
 
+    <string name="meal_log_title">Meal log</string>
+    <string name="selected_date">Selected date</string>
+    <string name="total_day_calories">Total day calories</string>
+    <string name="total_meal_calories">Total</string>
+    <string name="select_meal_type">Select meal type</string>
+    <string name="food_search_section">Choose existing food</string>
+    <string name="custom_food_section">Add custom food</string>
+    <string name="food_name">Food name</string>
+    <string name="food_name_hint">Example: Hot dog</string>
+    <string name="serving_description">Serving description</string>
+    <string name="serving_description_hint">Example: 1 piece</string>
+    <string name="serving_amount">Serving amount</string>
+    <string name="add_selected_food">Add selected food</string>
+    <string name="add_custom_food">Add custom food</string>
+    <string name="no_food_entries">No foods logged for this meal</string>
+    <string name="delete">Delete</string>
+    <string name="food_added">Food added successfully</string>
+    <string name="food_deleted">Food deleted</string>
+    <string name="error_select_food">Please select a food</string>
+    <string name="error_invalid_serving">Serving amount is invalid</string>
+    <string name="error_invalid_food_name">Food name is required</string>
+    <string name="error_invalid_calories">Calories must be valid</string>
+    <string name="error_invalid_serving_description">Serving description is required</string>
+
     <!-- Activity Log Screen -->
     <string name="add_activity">Add activity</string>
+    <string name="activity_log_title">Activity log</string>
+    <string name="activity_log_subtitle">Track your burned calories from daily activities.</string>
+    <string name="total_burned_calories">Total burned calories</string>
+    <string name="choose_activity">Choose activity</string>
     <string name="search_activity">Search activity</string>
-    <string name="duration_minutes">Duration in minutes</string>
+    <string name="available_activities">Available activities</string>
+    <string name="selected_activity">Selected activity</string>
+    <string name="duration_minutes">Duration minutes</string>
+    <string name="add_activity_log">Add activity</string>
+    <string name="activity_entries">Activity entries</string>
+    <string name="no_activity_entries">No activities logged for this day</string>
+    <string name="activity_added">Activity added successfully</string>
+    <string name="activity_deleted">Activity deleted</string>
+    <string name="error_select_activity">Please select an activity</string>
+    <string name="error_invalid_duration">Duration is invalid</string>
+    <string name="met_value">MET</string>
+    <string name="minutes">minutes</string>
 
     <!-- Meals of the day -->
     <string name="meal_lunch">Lunch</string>

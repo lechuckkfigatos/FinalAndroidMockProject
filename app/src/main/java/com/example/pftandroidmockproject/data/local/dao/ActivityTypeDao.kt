@@ -23,6 +23,6 @@ interface ActivityTypeDao {
     @Query("SELECT COUNT(*) FROM activity_types")
     suspend fun countActivityTypes(): Int
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertActivityTypes(types: List<ActivityTypeEntity>)
 }

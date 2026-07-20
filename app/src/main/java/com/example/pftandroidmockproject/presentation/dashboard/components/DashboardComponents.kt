@@ -94,13 +94,13 @@ fun LocalDate.formatForUi(): String {
 }
 
 @Composable
- fun DashboardDateCard(
+fun DashboardDateCard(
     content: @Composable () -> Unit,
     modifier: Modifier = Modifier
 ) {
     Card(
         modifier = modifier.fillMaxWidth(),
-        shape = RoundedCornerShape(20.dp),
+        shape = RoundedCornerShape(16.dp),
         colors = CardDefaults.cardColors(
             containerColor = Color.White
         ),
@@ -110,8 +110,8 @@ fun LocalDate.formatForUi(): String {
     ) {
         Box(
             modifier = Modifier.padding(
-                horizontal = 14.dp,
-                vertical = 12.dp
+                horizontal = 12.dp,
+                vertical = 8.dp
             )
         ) {
             content()

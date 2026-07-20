@@ -29,20 +29,6 @@ class DashboardViewModel @Inject constructor(
         observeDashboard(LocalDate.now())
     }
 
-    fun onPreviousDayClick() {
-        val newDate = _uiState.value.selectedDate.minusDays(1)
-        observeDashboard(newDate)
-    }
-
-    fun onTodayClick() {
-        observeDashboard(LocalDate.now())
-    }
-
-    fun onNextDayClick() {
-        val newDate = _uiState.value.selectedDate.plusDays(1)
-        observeDashboard(newDate)
-    }
-
     private fun observeDashboard(date: LocalDate) {
         dashBoardJob?.cancel()
 

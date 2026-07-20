@@ -38,9 +38,9 @@ sealed class AppDestination(
     )
 }
 val bottomNavDestinations = listOf(
-    AppDestination.Dashboard,
     AppDestination.Meals,
     AppDestination.Activities,
+    AppDestination.Dashboard,
     AppDestination.Statistics,
     AppDestination.Settings
 )

@@ -10,7 +10,7 @@ class ActivityCaloriesCalculator @Inject constructor() {
         weightKg : Double,
         durationMinutes : Int
     ) : Int{
-        val durationHours = durationMinutes/60
+        val durationHours = durationMinutes / 60.0
 
         return (metValue * weightKg * durationHours).roundToInt()
     }

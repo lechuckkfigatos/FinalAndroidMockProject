@@ -86,19 +86,58 @@
     <string name="dashboard_summary_title">Tóm tắt hôm nay</string>
     <string name="dashboard_advice_title">Gợi ý hôm nay</string>
     <string name="dashboard_quick_actions">Thao tác nhanh</string>
-
     <string name="today">Hôm nay</string>
     <string name="back_to_today">Quay lại hôm nay</string>
+
     <!-- Meal Log Screen -->
     <string name="add_meal">Thêm bữa ăn</string>
     <string name="search_food">Tìm món ăn</string>
     <string name="serving">Khẩu phần</string>
     <string name="calories_per_serving">Calo mỗi khẩu phần</string>
 
+    <string name="meal_log_title">Nhật ký bữa ăn</string>
+    <string name="selected_date">Ngày đang chọn</string>
+    <string name="total_day_calories">Tổng calo trong ngày</string>
+    <string name="total_meal_calories">Tổng</string>
+    <string name="select_meal_type">Chọn bữa ăn</string>
+    <string name="food_search_section">Chọn món có sẵn</string>
+    <string name="custom_food_section">Thêm món tự nhập</string>
+    <string name="food_name">Tên món ăn</string>
+    <string name="food_name_hint">Ví dụ: Hot dog</string>
+    <string name="serving_description">Mô tả khẩu phần</string>
+    <string name="serving_description_hint">Ví dụ: 1 cái</string>
+    <string name="serving_amount">Số khẩu phần</string>
+    <string name="add_selected_food">Thêm món đã chọn</string>
+    <string name="add_custom_food">Thêm món tự nhập</string>
+    <string name="no_food_entries">Chưa có món nào trong bữa này</string>
+    <string name="delete">Xóa</string>
+    <string name="food_added">Đã thêm món ăn</string>
+    <string name="food_deleted">Đã xóa món ăn</string>
+    <string name="error_select_food">Vui lòng chọn món ăn</string>
+    <string name="error_invalid_serving">Số khẩu phần không hợp lệ</string>
+    <string name="error_invalid_food_name">Vui lòng nhập tên món ăn</string>
+    <string name="error_invalid_calories">Calo không hợp lệ</string>
+    <string name="error_invalid_serving_description">Vui lòng nhập mô tả khẩu phần</string>
+
     <!-- Activity Log Screen -->
     <string name="add_activity">Thêm hoạt động</string>
+    <string name="activity_log_title">Nhật ký hoạt động</string>
+    <string name="activity_log_subtitle">Theo dõi lượng calo đã đốt từ hoạt động hằng ngày.</string>
+    <string name="total_burned_calories">Tổng calo đã đốt</string>
+    <string name="choose_activity">Chọn hoạt động</string>
     <string name="search_activity">Tìm hoạt động</string>
-    <string name="duration_minutes">Thời gian tính bằng phút</string>
+    <string name="available_activities">Danh sách hoạt động</string>
+    <string name="selected_activity">Hoạt động đã chọn</string>
+    <string name="duration_minutes">Thời lượng phút</string>
+    <string name="add_activity_log">Thêm hoạt động</string>
+    <string name="activity_entries">Hoạt động đã ghi</string>
+    <string name="no_activity_entries">Chưa có hoạt động nào trong ngày này</string>
+    <string name="activity_added">Đã thêm hoạt động</string>
+    <string name="activity_deleted">Đã xóa hoạt động</string>
+    <string name="error_select_activity">Vui lòng chọn hoạt động</string>
+    <string name="error_invalid_duration">Thời lượng không hợp lệ</string>
+    <string name="met_value">MET</string>
+    <string name="minutes">phút</string>
 
     <!-- Meals -->
     <string name="meal_lunch">Bữa trưa</string>

@@ -31,7 +31,6 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.pftandroidmockproject.R
 import com.example.pftandroidmockproject.presentation.dashboard.components.CalorieProgressCard
 import com.example.pftandroidmockproject.presentation.dashboard.components.DashboardAdviceCard
-import com.example.pftandroidmockproject.presentation.dashboard.components.DashboardDateCard
 import com.example.pftandroidmockproject.presentation.dashboard.components.DashboardHeader
 import com.example.pftandroidmockproject.presentation.dashboard.components.DashboardIntroduction
 import com.example.pftandroidmockproject.presentation.dashboard.components.DashboardLoadingCard
@@ -54,9 +53,6 @@ fun DashboardScreen(
 
     DashboardContent(
         uiState = uiState,
-        onPreviousDayClick = viewModel::onPreviousDayClick,
-        onNextDayClick = viewModel::onNextDayClick,
-        onTodayClick = viewModel::onTodayClick,
         onAddMealClick = onAddMealClick,
         onAddActivityClick = onAddActivityClick
     )
@@ -65,9 +61,6 @@ fun DashboardScreen(
 @Composable
 private fun DashboardContent(
     uiState: DashboardUiState,
-    onPreviousDayClick: () -> Unit,
-    onNextDayClick: () -> Unit,
-    onTodayClick: () -> Unit,
     onAddMealClick: () -> Unit,
     onAddActivityClick: () -> Unit
 ) {
@@ -104,15 +97,8 @@ private fun DashboardContent(
             }
 
             item {
-                DashboardDateCard(
-                    content = {
-                        DashboardHeader(
-                            selectedDate = uiState.selectedDate,
-                            onPreviousDayClick = onPreviousDayClick,
-                            onNextDayClick = onNextDayClick,
-                            onTodayClick = onTodayClick
-                        )
-                    }
+                DashboardHeader(
+                    selectedDate = uiState.selectedDate
                 )
             }
 

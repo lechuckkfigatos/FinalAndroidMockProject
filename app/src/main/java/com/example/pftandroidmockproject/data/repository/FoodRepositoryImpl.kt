@@ -32,9 +32,13 @@ class FoodRepositoryImpl @Inject constructor(
     }
 
     override suspend fun addFood(food: Food): Food {
-        val newId = foodDao.insertFood(food.toEntity()).toInt()
+        val foodToInsert = food.copy(id = 0)
 
-        return food.copy(id = newId)
+        val newId = foodDao.insertFood(
+            foodToInsert.toEntity()
+        ).toInt()
+
+        return foodToInsert.copy(id = newId)
     }
 
     override suspend fun updateFood(food: Food) {

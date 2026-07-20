@@ -30,6 +30,7 @@ class CreateCustomFoodUseCase @Inject constructor(
         }
 
         val customFood = Food(
+            id = 0,
             name = LocalizedText(
                 vi = cleanName,
                 en = cleanName

@@ -16,7 +16,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.example.pftandroidmockproject.R
 import com.example.pftandroidmockproject.domain.model.ActivityLevel
 import com.example.pftandroidmockproject.presentation.theme.HealthGreen
@@ -95,14 +94,14 @@ fun ActivityLevelSlider(
         ) {
             Text(
                 text = stringResource(R.string.activity_low),
-                fontSize = 9.sp,
+                style = MaterialTheme.typography.labelSmall,
                 fontWeight = FontWeight.SemiBold,
                 color = HealthSecondaryText
             )
 
             Text(
                 text = stringResource(R.string.activity_high),
-                fontSize = 9.sp,
+                style = MaterialTheme.typography.labelSmall,
                 fontWeight = FontWeight.SemiBold,
                 color = HealthSecondaryText
             )

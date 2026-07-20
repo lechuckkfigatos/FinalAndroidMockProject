@@ -3,7 +3,7 @@ package com.example.pftandroidmockproject.domain.model
 import java.time.LocalDate
 
 data class MealEntry (
-    val id : Int = 1,
+    val id : Int = 0,
     val date : LocalDate,
     val mealType: MealType,
 

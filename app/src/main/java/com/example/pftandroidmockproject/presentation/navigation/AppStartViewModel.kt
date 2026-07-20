@@ -2,6 +2,7 @@ package com.example.pftandroidmockproject.presentation.navigation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.pftandroidmockproject.data.local.seed.DatabaseSeeder
 import com.example.pftandroidmockproject.domain.use_case.profile.GetProfileOnceUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -13,20 +14,23 @@ import javax.inject.Inject
 
 @HiltViewModel
 class AppStartViewModel @Inject constructor(
+    private val databaseSeeder: DatabaseSeeder,
     private val getProfileOnceUseCase: GetProfileOnceUseCase
 ) : ViewModel() {
     private val _uiState = MutableStateFlow(AppStartUiState())
     val uiState: StateFlow<AppStartUiState> = _uiState.asStateFlow()
 
     init {
-        checkStartDestination()
+        prepareApp()
     }
 
-    private fun checkStartDestination() {
+    private fun prepareApp() {
         viewModelScope.launch {
+            databaseSeeder.seedIfNeeded()
+
             val profile = getProfileOnceUseCase()
 
-            val startDestination = if(profile == null){
+            val startDestination = if (profile == null) {
                 AppDestination.Onboarding.route
             } else {
                 AppDestination.Dashboard.route
