@@ -3,7 +3,7 @@ package com.example.pftandroidmockproject.data.repository
 import com.example.pftandroidmockproject.data.local.dao.UserProfileDao
 import com.example.pftandroidmockproject.data.mapper.toDomain
 import com.example.pftandroidmockproject.data.mapper.toEntity
-import com.example.pftandroidmockproject.domain.model.UserProfile
+import com.example.pftandroidmockproject.domain.model.profile.UserProfile
 import com.example.pftandroidmockproject.domain.repository.ProfileRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map

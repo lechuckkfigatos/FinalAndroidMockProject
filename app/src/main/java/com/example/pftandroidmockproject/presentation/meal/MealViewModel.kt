@@ -3,8 +3,8 @@ package com.example.pftandroidmockproject.presentation.meal
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.pftandroidmockproject.R
-import com.example.pftandroidmockproject.domain.model.Food
-import com.example.pftandroidmockproject.domain.model.MealType
+import com.example.pftandroidmockproject.domain.model.meal.Food
+import com.example.pftandroidmockproject.domain.model.meal.MealType
 import com.example.pftandroidmockproject.domain.use_case.food.SearchFoodsUseCase
 import com.example.pftandroidmockproject.domain.use_case.meal.AddCustomFoodToMealLogUseCase
 import com.example.pftandroidmockproject.domain.use_case.meal.AddFoodToMealLogUseCase

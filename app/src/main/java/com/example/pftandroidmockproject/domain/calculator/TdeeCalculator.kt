@@ -1,7 +1,7 @@
 package com.example.pftandroidmockproject.domain.calculator
 
-import com.example.pftandroidmockproject.domain.model.Gender
-import com.example.pftandroidmockproject.domain.model.UserProfile
+import com.example.pftandroidmockproject.domain.model.profile.Gender
+import com.example.pftandroidmockproject.domain.model.profile.UserProfile
 import javax.inject.Inject
 import kotlin.math.roundToInt
 

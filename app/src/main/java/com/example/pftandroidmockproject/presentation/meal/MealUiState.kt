@@ -1,8 +1,8 @@
 package com.example.pftandroidmockproject.presentation.meal
 
-import com.example.pftandroidmockproject.domain.model.Food
-import com.example.pftandroidmockproject.domain.model.MealEntry
-import com.example.pftandroidmockproject.domain.model.MealType
+import com.example.pftandroidmockproject.domain.model.meal.Food
+import com.example.pftandroidmockproject.domain.model.meal.MealEntry
+import com.example.pftandroidmockproject.domain.model.meal.MealType
 import java.time.LocalDate
 
 data class MealUiState (

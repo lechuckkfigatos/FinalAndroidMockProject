@@ -1,9 +1,9 @@
 package com.example.pftandroidmockproject.data.mapper
 
 import com.example.pftandroidmockproject.data.local.entity.MealEntryEntity
-import com.example.pftandroidmockproject.domain.model.LocalizedText
-import com.example.pftandroidmockproject.domain.model.MealEntry
-import com.example.pftandroidmockproject.domain.model.MealType
+import com.example.pftandroidmockproject.domain.model.setting.LocalizedText
+import com.example.pftandroidmockproject.domain.model.meal.MealEntry
+import com.example.pftandroidmockproject.domain.model.meal.MealType
 import java.time.LocalDate
 
 fun MealEntryEntity.toDomain() : MealEntry {

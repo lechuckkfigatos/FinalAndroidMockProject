@@ -4,10 +4,10 @@ package com.example.pftandroidmockproject.presentation.profile
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.pftandroidmockproject.R
-import com.example.pftandroidmockproject.domain.model.ActivityLevel
-import com.example.pftandroidmockproject.domain.model.Gender
-import com.example.pftandroidmockproject.domain.model.UserProfile
-import com.example.pftandroidmockproject.domain.model.WeightGoal
+import com.example.pftandroidmockproject.domain.model.activity.ActivityLevel
+import com.example.pftandroidmockproject.domain.model.profile.Gender
+import com.example.pftandroidmockproject.domain.model.profile.UserProfile
+import com.example.pftandroidmockproject.domain.model.setting.WeightGoal
 import com.example.pftandroidmockproject.domain.use_case.profile.CalculateBmiUseCase
 import com.example.pftandroidmockproject.domain.use_case.profile.CalculateTdeeUseCase
 import com.example.pftandroidmockproject.domain.use_case.profile.GetProfileOnceUseCase

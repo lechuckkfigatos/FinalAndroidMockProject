@@ -1,7 +1,7 @@
 package com.example.pftandroidmockproject.domain.use_case.activity
 
 import com.example.pftandroidmockproject.domain.calculator.ActivityCaloriesCalculator
-import com.example.pftandroidmockproject.domain.model.ActivityType
+import com.example.pftandroidmockproject.domain.model.activity.ActivityType
 import javax.inject.Inject
 
 class CalculateActivityCaloriesUseCase @Inject constructor(

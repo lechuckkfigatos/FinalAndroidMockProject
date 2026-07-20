@@ -28,8 +28,8 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.example.pftandroidmockproject.domain.model.Food
-import com.example.pftandroidmockproject.domain.model.MealType
+import com.example.pftandroidmockproject.domain.model.meal.Food
+import com.example.pftandroidmockproject.domain.model.meal.MealType
 import com.example.pftandroidmockproject.presentation.common.asString
 import com.example.pftandroidmockproject.presentation.meal.components.*
 import com.example.pftandroidmockproject.presentation.theme.HealthBackgroundBottom

@@ -45,9 +45,9 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.pftandroidmockproject.R
-import com.example.pftandroidmockproject.domain.model.ActivityLevel
-import com.example.pftandroidmockproject.domain.model.Gender
-import com.example.pftandroidmockproject.domain.model.WeightGoal
+import com.example.pftandroidmockproject.domain.model.activity.ActivityLevel
+import com.example.pftandroidmockproject.domain.model.profile.Gender
+import com.example.pftandroidmockproject.domain.model.setting.WeightGoal
 import com.example.pftandroidmockproject.presentation.common.asString
 import com.example.pftandroidmockproject.presentation.mapper.labelRes
 import com.example.pftandroidmockproject.presentation.profile.components.ActivityLevelSlider

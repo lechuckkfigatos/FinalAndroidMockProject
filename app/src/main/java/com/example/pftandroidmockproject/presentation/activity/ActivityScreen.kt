@@ -54,9 +54,9 @@ import androidx.compose.ui.window.DialogProperties
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.pftandroidmockproject.R
-import com.example.pftandroidmockproject.domain.model.ActivityEntry
-import com.example.pftandroidmockproject.domain.model.ActivityType
-import com.example.pftandroidmockproject.domain.model.LocalizedText
+import com.example.pftandroidmockproject.domain.model.activity.ActivityEntry
+import com.example.pftandroidmockproject.domain.model.activity.ActivityType
+import com.example.pftandroidmockproject.domain.model.setting.LocalizedText
 import com.example.pftandroidmockproject.presentation.common.asString
 import com.example.pftandroidmockproject.presentation.profile.components.HealthTrackerHeader
 import com.example.pftandroidmockproject.presentation.theme.HealthBackgroundBottom

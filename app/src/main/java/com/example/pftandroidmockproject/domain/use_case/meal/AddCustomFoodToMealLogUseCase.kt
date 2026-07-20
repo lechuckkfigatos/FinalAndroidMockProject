@@ -1,6 +1,6 @@
 package com.example.pftandroidmockproject.domain.use_case.meal
 
-import com.example.pftandroidmockproject.domain.model.MealType
+import com.example.pftandroidmockproject.domain.model.meal.MealType
 import com.example.pftandroidmockproject.domain.use_case.food.CreateCustomFoodUseCase
 import java.time.LocalDate
 import javax.inject.Inject

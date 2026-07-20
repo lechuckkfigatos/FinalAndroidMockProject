@@ -1,8 +1,8 @@
 package com.example.pftandroidmockproject.domain.use_case.profile
 
 import com.example.pftandroidmockproject.domain.calculator.BmiCalculator
-import com.example.pftandroidmockproject.domain.model.BmiCategory
-import com.example.pftandroidmockproject.domain.model.UserProfile
+import com.example.pftandroidmockproject.domain.model.profile.BmiCategory
+import com.example.pftandroidmockproject.domain.model.profile.UserProfile
 import javax.inject.Inject
 
 class CalculateBmiUseCase @Inject constructor(

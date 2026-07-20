@@ -1,10 +1,10 @@
 package com.example.pftandroidmockproject.data.mapper
 
 import com.example.pftandroidmockproject.data.local.entity.UserProfileEntity
-import com.example.pftandroidmockproject.domain.model.ActivityLevel
-import com.example.pftandroidmockproject.domain.model.Gender
-import com.example.pftandroidmockproject.domain.model.UserProfile
-import com.example.pftandroidmockproject.domain.model.WeightGoal
+import com.example.pftandroidmockproject.domain.model.activity.ActivityLevel
+import com.example.pftandroidmockproject.domain.model.profile.Gender
+import com.example.pftandroidmockproject.domain.model.profile.UserProfile
+import com.example.pftandroidmockproject.domain.model.setting.WeightGoal
 import java.time.LocalDate
 
 fun UserProfileEntity.toDomain(): UserProfile{

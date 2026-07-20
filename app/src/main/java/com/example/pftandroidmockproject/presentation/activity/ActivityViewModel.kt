@@ -3,7 +3,7 @@ package com.example.pftandroidmockproject.presentation.activity
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.pftandroidmockproject.R
-import com.example.pftandroidmockproject.domain.model.ActivityType
+import com.example.pftandroidmockproject.domain.model.activity.ActivityType
 import com.example.pftandroidmockproject.domain.use_case.activity.DeleteActivityEntryUseCase
 import com.example.pftandroidmockproject.domain.use_case.activity.GetActivityEntriesByDateUseCase
 import com.example.pftandroidmockproject.domain.use_case.activity.SearchActivityTypesUseCase

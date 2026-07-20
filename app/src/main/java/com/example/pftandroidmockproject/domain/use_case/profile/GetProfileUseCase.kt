@@ -1,6 +1,6 @@
 package com.example.pftandroidmockproject.domain.use_case.profile
 
-import com.example.pftandroidmockproject.domain.model.UserProfile
+import com.example.pftandroidmockproject.domain.model.profile.UserProfile
 import com.example.pftandroidmockproject.domain.repository.ProfileRepository
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject

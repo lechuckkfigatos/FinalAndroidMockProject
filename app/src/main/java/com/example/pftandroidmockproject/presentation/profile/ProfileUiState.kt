@@ -1,9 +1,9 @@
 package com.example.pftandroidmockproject.presentation.profile
 
-import com.example.pftandroidmockproject.domain.model.ActivityLevel
-import com.example.pftandroidmockproject.domain.model.BmiCategory
-import com.example.pftandroidmockproject.domain.model.Gender
-import com.example.pftandroidmockproject.domain.model.WeightGoal
+import com.example.pftandroidmockproject.domain.model.activity.ActivityLevel
+import com.example.pftandroidmockproject.domain.model.profile.BmiCategory
+import com.example.pftandroidmockproject.domain.model.profile.Gender
+import com.example.pftandroidmockproject.domain.model.setting.WeightGoal
 import java.time.LocalDate
 
 data class ProfileUiState(

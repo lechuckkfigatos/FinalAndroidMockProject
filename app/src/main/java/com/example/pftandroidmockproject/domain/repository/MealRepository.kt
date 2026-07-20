@@ -1,6 +1,6 @@
 package com.example.pftandroidmockproject.domain.repository
 
-import com.example.pftandroidmockproject.domain.model.MealEntry
+import com.example.pftandroidmockproject.domain.model.meal.MealEntry
 import kotlinx.coroutines.flow.Flow
 import java.time.LocalDate
 

@@ -44,7 +44,7 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.pftandroidmockproject.R
-import com.example.pftandroidmockproject.domain.model.DailyStatistic
+import com.example.pftandroidmockproject.domain.model.statistic.DailyStatistic
 import com.example.pftandroidmockproject.presentation.profile.components.HealthTrackerHeader
 import com.example.pftandroidmockproject.presentation.theme.HealthBackgroundBottom
 import com.example.pftandroidmockproject.presentation.theme.HealthBackgroundTop

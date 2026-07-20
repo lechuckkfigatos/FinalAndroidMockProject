@@ -1,8 +1,8 @@
 package com.example.pftandroidmockproject.data.mapper
 
 import com.example.pftandroidmockproject.data.local.entity.ActivityEntryEntity
-import com.example.pftandroidmockproject.domain.model.ActivityEntry
-import com.example.pftandroidmockproject.domain.model.LocalizedText
+import com.example.pftandroidmockproject.domain.model.activity.ActivityEntry
+import com.example.pftandroidmockproject.domain.model.setting.LocalizedText
 import java.time.LocalDate
 
 fun ActivityEntryEntity.toDomain() : ActivityEntry {

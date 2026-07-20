@@ -5,8 +5,8 @@ import com.example.pftandroidmockproject.data.local.dao.ActivityTypeDao
 import com.example.pftandroidmockproject.data.local.dao.MealEntryDao
 import com.example.pftandroidmockproject.data.mapper.toDomain
 import com.example.pftandroidmockproject.data.mapper.toEntity
-import com.example.pftandroidmockproject.domain.model.ActivityEntry
-import com.example.pftandroidmockproject.domain.model.ActivityType
+import com.example.pftandroidmockproject.domain.model.activity.ActivityEntry
+import com.example.pftandroidmockproject.domain.model.activity.ActivityType
 import com.example.pftandroidmockproject.domain.repository.ActivityRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map

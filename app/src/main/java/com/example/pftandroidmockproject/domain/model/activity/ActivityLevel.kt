@@ -1,4 +1,4 @@
-package com.example.pftandroidmockproject.domain.model
+package com.example.pftandroidmockproject.domain.model.activity
 
 enum class ActivityLevel(
     val multiplier : Double

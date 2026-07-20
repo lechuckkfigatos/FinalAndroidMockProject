@@ -1,5 +1,7 @@
-package com.example.pftandroidmockproject.domain.model
+package com.example.pftandroidmockproject.domain.model.profile
 
+import com.example.pftandroidmockproject.domain.model.activity.ActivityLevel
+import com.example.pftandroidmockproject.domain.model.setting.WeightGoal
 import java.time.LocalDate
 
 data class UserProfile (

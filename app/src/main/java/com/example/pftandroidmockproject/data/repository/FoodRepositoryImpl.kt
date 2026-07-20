@@ -3,7 +3,7 @@ package com.example.pftandroidmockproject.data.repository
 import com.example.pftandroidmockproject.data.local.dao.FoodDao
 import com.example.pftandroidmockproject.data.mapper.toDomain
 import com.example.pftandroidmockproject.data.mapper.toEntity
-import com.example.pftandroidmockproject.domain.model.Food
+import com.example.pftandroidmockproject.domain.model.meal.Food
 import com.example.pftandroidmockproject.domain.repository.FoodRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map

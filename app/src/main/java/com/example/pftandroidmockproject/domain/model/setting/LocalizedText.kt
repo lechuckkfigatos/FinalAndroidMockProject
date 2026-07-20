@@ -1,4 +1,4 @@
-package com.example.pftandroidmockproject.domain.model
+package com.example.pftandroidmockproject.domain.model.setting
 
 data  class LocalizedText(
     val vi : String,

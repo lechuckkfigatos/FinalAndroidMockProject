@@ -58,7 +58,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.pftandroidmockproject.R
-import com.example.pftandroidmockproject.domain.model.ActivityLevel
+import com.example.pftandroidmockproject.domain.model.activity.ActivityLevel
 import com.example.pftandroidmockproject.presentation.mapper.labelRes
 import com.example.pftandroidmockproject.presentation.profile.ProfileUiState
 import com.example.pftandroidmockproject.presentation.theme.*

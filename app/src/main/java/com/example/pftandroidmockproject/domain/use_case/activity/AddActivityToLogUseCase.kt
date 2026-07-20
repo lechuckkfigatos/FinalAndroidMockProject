@@ -1,7 +1,7 @@
 package com.example.pftandroidmockproject.domain.usecase.activity
 
-import com.example.pftandroidmockproject.domain.model.ActivityEntry
-import com.example.pftandroidmockproject.domain.model.ActivityType
+import com.example.pftandroidmockproject.domain.model.activity.ActivityEntry
+import com.example.pftandroidmockproject.domain.model.activity.ActivityType
 import com.example.pftandroidmockproject.domain.repository.ActivityRepository
 import com.example.pftandroidmockproject.domain.repository.ProfileRepository
 import com.example.pftandroidmockproject.domain.use_case.activity.CreateActivityEntryUseCase

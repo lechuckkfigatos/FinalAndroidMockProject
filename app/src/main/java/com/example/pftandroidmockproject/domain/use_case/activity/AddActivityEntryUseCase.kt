@@ -1,6 +1,6 @@
 package com.example.pftandroidmockproject.domain.use_case.activity
 
-import com.example.pftandroidmockproject.domain.model.ActivityEntry
+import com.example.pftandroidmockproject.domain.model.activity.ActivityEntry
 import com.example.pftandroidmockproject.domain.repository.ActivityRepository
 import javax.inject.Inject
 

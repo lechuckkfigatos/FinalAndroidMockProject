@@ -1,7 +1,7 @@
 package com.example.pftandroidmockproject.domain.repository
 
-import com.example.pftandroidmockproject.domain.model.ActivityEntry
-import com.example.pftandroidmockproject.domain.model.ActivityType
+import com.example.pftandroidmockproject.domain.model.activity.ActivityEntry
+import com.example.pftandroidmockproject.domain.model.activity.ActivityType
 import kotlinx.coroutines.flow.Flow
 import java.time.LocalDate
 

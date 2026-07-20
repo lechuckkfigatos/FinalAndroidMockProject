@@ -1,6 +1,6 @@
 package com.example.pftandroidmockproject.presentation.statistics
 
-import com.example.pftandroidmockproject.domain.model.DailyStatistic
+import com.example.pftandroidmockproject.domain.model.statistic.DailyStatistic
 import java.time.LocalDate
 
 data class StatisticsUiState(

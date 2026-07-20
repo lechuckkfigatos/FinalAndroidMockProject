@@ -17,7 +17,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.example.pftandroidmockproject.R
-import com.example.pftandroidmockproject.domain.model.ActivityLevel
+import com.example.pftandroidmockproject.domain.model.activity.ActivityLevel
 import com.example.pftandroidmockproject.presentation.theme.HealthGreen
 import com.example.pftandroidmockproject.presentation.theme.HealthSecondaryText
 import kotlin.collections.indexOf

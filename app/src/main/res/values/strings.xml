@@ -168,4 +168,16 @@
     <string name="full_name_hint">ENTER NAME</string>
     <string name="health_tracker">HEALTH TRACKER</string>
 
+    <!-- Settings -->
+    <string name="settings_title">Settings</string>
+    <string name="settings_subtitle">Customize your app preferences.</string>
+    <string name="language">Language</string>
+    <string name="vietnamese">Vietnamese</string>
+    <string name="english">English</string>
+    <string name="theme">Theme</string>
+    <string name="theme_system">System</string>
+    <string name="theme_light">Light</string>
+    <string name="theme_dark">Dark</string>
+    <string name="settings_saved">Settings saved</string>
+
 </resources>

@@ -1,8 +1,8 @@
 package com.example.pftandroidmockproject.domain.use_case.dashboard
 
-import com.example.pftandroidmockproject.domain.model.ActivityEntry
-import com.example.pftandroidmockproject.domain.model.DailyCalorieSummary
-import com.example.pftandroidmockproject.domain.model.MealEntry
+import com.example.pftandroidmockproject.domain.model.activity.ActivityEntry
+import com.example.pftandroidmockproject.domain.model.statistic.DailyCalorieSummary
+import com.example.pftandroidmockproject.domain.model.meal.MealEntry
 import javax.inject.Inject
 
 class CalculateDailySummaryUseCase @Inject constructor() {

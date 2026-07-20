@@ -1,7 +1,7 @@
 package com.example.pftandroidmockproject.domain.use_case.statistic
 
 import com.example.pftandroidmockproject.domain.calculator.TdeeCalculator
-import com.example.pftandroidmockproject.domain.model.DailyStatistic
+import com.example.pftandroidmockproject.domain.model.statistic.DailyStatistic
 import com.example.pftandroidmockproject.domain.repository.ActivityRepository
 import com.example.pftandroidmockproject.domain.repository.MealRepository
 import com.example.pftandroidmockproject.domain.repository.ProfileRepository

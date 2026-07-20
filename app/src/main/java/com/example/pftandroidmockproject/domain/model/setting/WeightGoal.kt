@@ -1,4 +1,4 @@
-package com.example.pftandroidmockproject.domain.model
+package com.example.pftandroidmockproject.domain.model.setting
 
 enum class WeightGoal(
     val calorieAdjustment : Int,

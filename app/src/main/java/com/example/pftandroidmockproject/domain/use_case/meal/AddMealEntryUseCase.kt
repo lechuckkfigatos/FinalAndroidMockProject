@@ -1,6 +1,6 @@
 package com.example.pftandroidmockproject.domain.use_case.meal
 
-import com.example.pftandroidmockproject.domain.model.MealEntry
+import com.example.pftandroidmockproject.domain.model.meal.MealEntry
 import com.example.pftandroidmockproject.domain.repository.MealRepository
 import javax.inject.Inject
 

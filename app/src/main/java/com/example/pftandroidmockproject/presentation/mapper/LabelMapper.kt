@@ -2,11 +2,11 @@ package com.example.pftandroidmockproject.presentation.mapper
 
 import androidx.annotation.StringRes
 import com.example.pftandroidmockproject.R
-import com.example.pftandroidmockproject.domain.model.ActivityLevel
-import com.example.pftandroidmockproject.domain.model.BmiCategory
-import com.example.pftandroidmockproject.domain.model.Gender
-import com.example.pftandroidmockproject.domain.model.MealType
-import com.example.pftandroidmockproject.domain.model.WeightGoal
+import com.example.pftandroidmockproject.domain.model.activity.ActivityLevel
+import com.example.pftandroidmockproject.domain.model.profile.BmiCategory
+import com.example.pftandroidmockproject.domain.model.profile.Gender
+import com.example.pftandroidmockproject.domain.model.meal.MealType
+import com.example.pftandroidmockproject.domain.model.setting.WeightGoal
 
 @StringRes
 fun Gender.labelRes(): Int {

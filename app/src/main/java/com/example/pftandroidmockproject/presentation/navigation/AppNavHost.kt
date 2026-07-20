@@ -18,6 +18,7 @@ import com.example.pftandroidmockproject.presentation.activity.ActivityLogScreen
 import com.example.pftandroidmockproject.presentation.dashboard.DashboardScreen
 import com.example.pftandroidmockproject.presentation.meal.MealScreen
 import com.example.pftandroidmockproject.presentation.profile.OnboardingScreen
+import com.example.pftandroidmockproject.presentation.settings.SettingsScreen
 import com.example.pftandroidmockproject.presentation.statistics.StatisticsScreen
 
 @Composable
@@ -81,9 +82,7 @@ fun AppNavHost(
         composable(
             route = AppDestination.Settings.route
         ) {
-            PlaceholderScreen(
-                destination = AppDestination.Settings
-            )
+            SettingsScreen()
         }
     }
 }

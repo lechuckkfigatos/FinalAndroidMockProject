@@ -1,4 +1,4 @@
-﻿package com.example.pftandroidmockproject.presentation.meal.components
+package com.example.pftandroidmockproject.presentation.meal.components
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
@@ -44,10 +44,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
 import com.example.pftandroidmockproject.R
-import com.example.pftandroidmockproject.domain.model.Food
-import com.example.pftandroidmockproject.domain.model.LocalizedText
-import com.example.pftandroidmockproject.domain.model.MealEntry
-import com.example.pftandroidmockproject.domain.model.MealType
+import com.example.pftandroidmockproject.domain.model.meal.Food
+import com.example.pftandroidmockproject.domain.model.setting.LocalizedText
+import com.example.pftandroidmockproject.domain.model.meal.MealEntry
+import com.example.pftandroidmockproject.domain.model.meal.MealType
 import com.example.pftandroidmockproject.presentation.mapper.labelRes
 import com.example.pftandroidmockproject.presentation.profile.components.HealthTrackerHeader
 import com.example.pftandroidmockproject.presentation.meal.MealUiState

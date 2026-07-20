@@ -1,7 +1,7 @@
 package com.example.pftandroidmockproject.presentation.activity
 
-import com.example.pftandroidmockproject.domain.model.ActivityEntry
-import com.example.pftandroidmockproject.domain.model.ActivityType
+import com.example.pftandroidmockproject.domain.model.activity.ActivityEntry
+import com.example.pftandroidmockproject.domain.model.activity.ActivityType
 import java.time.LocalDate
 
 data class ActivityUiState (

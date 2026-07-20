@@ -1,6 +1,6 @@
 package com.example.pftandroidmockproject.domain.repository
 
-import com.example.pftandroidmockproject.domain.model.Food
+import com.example.pftandroidmockproject.domain.model.meal.Food
 import kotlinx.coroutines.flow.Flow
 
 interface FoodRepository {

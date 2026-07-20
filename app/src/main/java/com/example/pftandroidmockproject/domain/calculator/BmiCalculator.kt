@@ -1,8 +1,7 @@
 package com.example.pftandroidmockproject.domain.calculator
 
-import com.example.pftandroidmockproject.domain.model.BmiCategory
+import com.example.pftandroidmockproject.domain.model.profile.BmiCategory
 import javax.inject.Inject
-import kotlin.math.roundToInt
 
 class BmiCalculator @Inject constructor() {
 

@@ -167,4 +167,16 @@
     <string name="full_name_hint">ENTER NAME</string>
     <string name="health_tracker">HEALTH TRACKER</string>
 
+    <!-- Settings Screen -->
+    <string name="settings_title">Cài đặt</string>
+    <string name="settings_subtitle">Tùy chỉnh thiết lập ứng dụng.</string>
+    <string name="language">Ngôn ngữ</string>
+    <string name="vietnamese">Tiếng Việt</string>
+    <string name="english">Tiếng Anh</string>
+    <string name="theme">Giao diện</string>
+    <string name="theme_system">Theo hệ thống</string>
+    <string name="theme_light">Sáng</string>
+    <string name="theme_dark">Tối</string>
+    <string name="settings_saved">Đã lưu cài đặt</string>
+
 </resources>

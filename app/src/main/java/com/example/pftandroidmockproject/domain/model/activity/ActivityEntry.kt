@@ -1,5 +1,6 @@
-package com.example.pftandroidmockproject.domain.model
+package com.example.pftandroidmockproject.domain.model.activity
 
+import com.example.pftandroidmockproject.domain.model.setting.LocalizedText
 import java.time.LocalDate
 
 data class ActivityEntry(

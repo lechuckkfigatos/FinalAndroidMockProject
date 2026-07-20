@@ -1,8 +1,8 @@
 package com.example.pftandroidmockproject.data.mapper
 
 import com.example.pftandroidmockproject.data.local.entity.FoodEntity
-import com.example.pftandroidmockproject.domain.model.Food
-import com.example.pftandroidmockproject.domain.model.LocalizedText
+import com.example.pftandroidmockproject.domain.model.meal.Food
+import com.example.pftandroidmockproject.domain.model.setting.LocalizedText
 
 fun FoodEntity.toDomain() : Food {
     return Food(

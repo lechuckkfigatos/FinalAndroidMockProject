@@ -1,8 +1,8 @@
 package com.example.pftandroidmockproject.data.mapper
 
 import com.example.pftandroidmockproject.data.local.entity.ActivityTypeEntity
-import com.example.pftandroidmockproject.domain.model.ActivityType
-import com.example.pftandroidmockproject.domain.model.LocalizedText
+import com.example.pftandroidmockproject.domain.model.activity.ActivityType
+import com.example.pftandroidmockproject.domain.model.setting.LocalizedText
 
 fun ActivityTypeEntity.toDomain(): ActivityType {
     return ActivityType(

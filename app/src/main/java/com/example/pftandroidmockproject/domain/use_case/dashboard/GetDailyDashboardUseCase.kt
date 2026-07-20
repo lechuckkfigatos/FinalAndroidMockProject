@@ -1,6 +1,6 @@
 package com.example.pftandroidmockproject.domain.use_case.dashboard
 
-import com.example.pftandroidmockproject.domain.model.DailyCalorieSummary
+import com.example.pftandroidmockproject.domain.model.statistic.DailyCalorieSummary
 import com.example.pftandroidmockproject.domain.repository.ActivityRepository
 import com.example.pftandroidmockproject.domain.repository.MealRepository
 import com.example.pftandroidmockproject.domain.repository.ProfileRepository
