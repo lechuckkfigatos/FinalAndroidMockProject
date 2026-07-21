@@ -39,6 +39,7 @@ import com.example.pftandroidmockproject.presentation.dashboard.components.Dashb
 import com.example.pftandroidmockproject.presentation.dashboard.components.DashboardSectionTitle
 import com.example.pftandroidmockproject.presentation.dashboard.components.DashboardShortcutSection
 import com.example.pftandroidmockproject.presentation.dashboard.components.DashboardSummarySection
+import com.example.pftandroidmockproject.presentation.dashboard.components.StaticDashboardHeader
 import com.example.pftandroidmockproject.presentation.profile.components.HealthTrackerHeader
 import com.example.pftandroidmockproject.presentation.theme.HealthBackgroundBottom
 import com.example.pftandroidmockproject.presentation.theme.HealthBackgroundTop
@@ -182,29 +183,5 @@ private fun DashboardContent(
                 }
             }
         }
-    }
-}
-
-@Composable
-private fun StaticDashboardHeader(
-    modifier: Modifier = Modifier
-) {
-    Column(
-        modifier = modifier
-            .fillMaxWidth()
-            .background(
-                color = HealthBackgroundTop.copy(alpha = 0.96f)
-            )
-            .padding(
-                horizontal = 16.dp,
-                vertical = 14.dp
-            ),
-        verticalArrangement = Arrangement.spacedBy(10.dp)
-    ) {
-        HealthTrackerHeader(
-            title = stringResource(R.string.health_tracker)
-        )
-
-        DashboardIntroduction()
     }
 }

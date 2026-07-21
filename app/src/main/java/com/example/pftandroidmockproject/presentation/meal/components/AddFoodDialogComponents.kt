@@ -56,529 +56,6 @@ import com.example.pftandroidmockproject.presentation.theme.HealthAccent
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
-enum class AddFoodDialogMode {
-    CLOSED,
-    CHOOSE_METHOD,
-    EXISTING_FOOD,
-    CUSTOM_FOOD
-}
-@Composable
-fun StaticMealHeader(
-    modifier: Modifier = Modifier
-) {
-    Column(
-        modifier = modifier
-            .fillMaxWidth()
-            .background(
-                color = HealthBackgroundTop.copy(alpha = 0.96f)
-            )
-            .padding(
-                horizontal = 16.dp,
-                vertical = 14.dp
-            ),
-        verticalArrangement = Arrangement.spacedBy(10.dp)
-    ) {
-        HealthTrackerHeader(
-            title = stringResource(R.string.health_tracker)
-        )
-
-        Column(
-            verticalArrangement = Arrangement.spacedBy(3.dp)
-        ) {
-            Text(
-                text = stringResource(R.string.meal_log_title),
-                style = MaterialTheme.typography.headlineSmall,
-                fontWeight = FontWeight.Bold,
-                color = MaterialTheme.colorScheme.onSurface
-            )
-
-            Text(
-                text = uiText(
-                    vi = "Theo dõi lượng calo từ từng bữa ăn trong ngày.",
-                    en = "Track calories from each meal throughout the day."
-                ),
-                style = MaterialTheme.typography.bodyMedium,
-                color = MaterialTheme.colorScheme.onSurfaceVariant
-            )
-        }
-    }
-}
-
-/* =========================================================
-   DATE CARD
-   ========================================================= */
-
-@Composable
-fun MealDateCard(
-    selectedDate: LocalDate,
-    totalDayCalories: Int,
-    onPreviousDayClick: () -> Unit,
-    onNextDayClick: () -> Unit,
-    onTodayClick: () -> Unit,
-    modifier: Modifier = Modifier
-) {
-    val today = LocalDate.now()
-    val isToday = selectedDate == today
-
-    val locale = LocalConfiguration.current.locales[0]
-
-    val dayFormatter = remember(locale) {
-        DateTimeFormatter.ofPattern(
-            "EEEE",
-            locale
-        )
-    }
-
-    val dateFormatter = remember(locale) {
-        DateTimeFormatter.ofPattern(
-            "dd MMMM yyyy",
-            locale
-        )
-    }
-
-    val dayText = selectedDate
-        .format(dayFormatter)
-        .replaceFirstChar { character ->
-            if (character.isLowerCase()) {
-                character.titlecase(locale)
-            } else {
-                character.toString()
-            }
-        }
-
-    Card(
-        modifier = modifier.fillMaxWidth(),
-        shape = RoundedCornerShape(16.dp),
-        colors = CardDefaults.cardColors(
-            containerColor = MaterialTheme.colorScheme.surface
-        ),
-        elevation = CardDefaults.cardElevation(
-            defaultElevation = 2.dp
-        )
-    ) {
-        Column(
-            modifier = Modifier.padding(10.dp),
-            verticalArrangement = Arrangement.spacedBy(8.dp)
-        ) {
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.SpaceBetween
-            ) {
-                DateNavigationButton(
-                    text = "<",
-                    onClick = onPreviousDayClick
-                )
-
-                Column(
-                    modifier = Modifier.weight(1f),
-                    horizontalAlignment = Alignment.CenterHorizontally,
-                    verticalArrangement = Arrangement.spacedBy(2.dp)
-                ) {
-                    Text(
-                        text = if (isToday) {
-                            stringResource(R.string.today)
-                        } else {
-                            dayText
-                        },
-                        style = MaterialTheme.typography.titleMedium,
-                        fontWeight = FontWeight.Bold
-                    )
-
-                    Text(
-                        text = selectedDate.format(dateFormatter),
-                        style = MaterialTheme.typography.bodySmall,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant
-                    )
-
-                    if (!isToday) {
-                        TextButton(
-                            onClick = onTodayClick,
-                            modifier = Modifier.height(28.dp),
-                            contentPadding = PaddingValues(
-                                horizontal = 8.dp,
-                                vertical = 0.dp
-                            )
-                        ) {
-                            Text(
-                                text = uiText(
-                                    vi = "Quay lại hôm nay",
-                                    en = "Back to today"
-                                ),
-                                color = HealthAccent,
-                                fontWeight = FontWeight.SemiBold
-                            )
-                        }
-                    }
-                }
-
-                DateNavigationButton(
-                    text = ">",
-                    onClick = onNextDayClick
-                )
-            }
-
-            HorizontalDivider(
-                color = MaterialTheme.colorScheme.outlineVariant
-            )
-
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .background(
-                        color = HealthAccent.copy(alpha = 0.08f),
-                        shape = RoundedCornerShape(14.dp)
-                    )
-                    .padding(
-                        horizontal = 14.dp,
-                        vertical = 8.dp
-                    ),
-                verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.SpaceBetween
-            ) {
-                Column(
-                    verticalArrangement = Arrangement.spacedBy(2.dp)
-                ) {
-                    Text(
-                        text = stringResource(R.string.total_day_calories),
-                        style = MaterialTheme.typography.labelMedium,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant
-                    )
-
-                    Text(
-                        text = uiText(
-                            vi = "Tổng lượng đã nạp",
-                            en = "Total consumed"
-                        ),
-                        style = MaterialTheme.typography.bodySmall,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant
-                    )
-                }
-
-                Row(
-                    verticalAlignment = Alignment.Bottom,
-                    horizontalArrangement = Arrangement.spacedBy(4.dp)
-                ) {
-                    Text(
-                        text = totalDayCalories.toString(),
-                        style = MaterialTheme.typography.titleLarge,
-                        fontWeight = FontWeight.Bold,
-                        color = HealthAccent
-                    )
-
-                    Text(
-                        text = stringResource(R.string.kcal),
-                        style = MaterialTheme.typography.labelSmall,
-                        color = HealthAccent.copy(alpha = 0.75f)
-                    )
-                }
-            }
-        }
-    }
-}
-
-@Composable
-private fun DateNavigationButton(
-    text: String,
-    onClick: () -> Unit,
-    modifier: Modifier = Modifier
-) {
-    Card(
-        modifier = modifier
-            .size(34.dp)
-            .clickable(onClick = onClick),
-        shape = RoundedCornerShape(10.dp),
-        colors = CardDefaults.cardColors(
-            containerColor = HealthAccent.copy(alpha = 0.10f)
-        ),
-        elevation = CardDefaults.cardElevation(
-            defaultElevation = 0.dp
-        )
-    ) {
-        Box(
-            modifier = Modifier.fillMaxSize(),
-            contentAlignment = Alignment.Center
-        ) {
-            Text(
-                text = text,
-                style = MaterialTheme.typography.headlineSmall,
-                fontWeight = FontWeight.Bold,
-                color = HealthAccent
-            )
-        }
-    }
-}
-
-@Composable
-fun MealSectionTitle(
-    modifier: Modifier = Modifier
-) {
-    Row(
-        modifier = modifier.fillMaxWidth(),
-        verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.spacedBy(9.dp)
-    ) {
-        Box(
-            modifier = Modifier
-                .size(
-                    width = 4.dp,
-                    height = 21.dp
-                )
-                .background(
-                    color = HealthAccent,
-                    shape = RoundedCornerShape(50)
-                )
-        )
-
-        Text(
-            text = uiText(
-                vi = "Các bữa ăn",
-                en = "Daily meals"
-            ),
-            style = MaterialTheme.typography.titleMedium,
-            fontWeight = FontWeight.Bold
-        )
-    }
-}
-
-/* =========================================================
-   INDIVIDUAL MEAL CARD
-   ========================================================= */
-
-@Composable
-fun MealTypeCard(
-    mealType: MealType,
-    entries: List<MealEntry>,
-    totalCalories: Int,
-    isSelected: Boolean,
-    onCardClick: () -> Unit,
-    onAddFoodClick: () -> Unit,
-    onDeleteMealEntryClick: (MealEntry) -> Unit,
-    modifier: Modifier = Modifier
-) {
-    Card(
-        modifier = modifier
-            .fillMaxWidth()
-            .clickable(onClick = onCardClick),
-        shape = RoundedCornerShape(20.dp),
-        colors = CardDefaults.cardColors(
-            containerColor = MaterialTheme.colorScheme.surface
-        ),
-        border = BorderStroke(
-            width = if (isSelected) 2.dp else 1.dp,
-            color = if (isSelected) {
-                HealthAccent.copy(alpha = 0.75f)
-            } else {
-                MaterialTheme.colorScheme.outlineVariant
-            }
-        ),
-        elevation = CardDefaults.cardElevation(
-            defaultElevation = 2.dp
-        )
-    ) {
-        Column(
-            modifier = Modifier.padding(15.dp),
-            verticalArrangement = Arrangement.spacedBy(12.dp)
-        ) {
-            MealCardHeader(
-                mealType = mealType,
-                totalCalories = totalCalories,
-                foodCount = entries.size
-            )
-
-            HorizontalDivider(
-                color = MaterialTheme.colorScheme.outlineVariant
-            )
-
-            if (entries.isEmpty()) {
-                EmptyMealContent()
-            } else {
-                Column(
-                    verticalArrangement = Arrangement.spacedBy(0.dp)
-                ) {
-                    entries.forEachIndexed { index, entry ->
-                        if (index > 0) {
-                            HorizontalDivider(
-                                color = MaterialTheme.colorScheme.outlineVariant
-                            )
-                        }
-
-                        MealEntryRow(
-                            entry = entry,
-                            onDeleteClick = {
-                                onDeleteMealEntryClick(entry)
-                            }
-                        )
-                    }
-                }
-            }
-
-            Button(
-                onClick = onAddFoodClick,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(48.dp),
-                shape = RoundedCornerShape(13.dp),
-                colors = ButtonDefaults.buttonColors(
-                    containerColor = HealthAccent,
-                    contentColor = Color.White
-                )
-            ) {
-                Text(
-                    text = uiText(
-                        vi = "Thêm đồ ăn",
-                        en = "Add food"
-                    ),
-                    fontWeight = FontWeight.Bold
-                )
-            }
-        }
-    }
-}
-
-@Composable
-private fun MealCardHeader(
-    mealType: MealType,
-    totalCalories: Int,
-    foodCount: Int
-) {
-    Row(
-        modifier = Modifier.fillMaxWidth(),
-        verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.SpaceBetween
-    ) {
-        Column(
-            modifier = Modifier.weight(1f),
-            verticalArrangement = Arrangement.spacedBy(3.dp)
-        ) {
-            Text(
-                text = stringResource(mealType.labelRes()),
-                style = MaterialTheme.typography.titleLarge,
-                fontWeight = FontWeight.Bold
-            )
-
-            Text(
-                text = if (foodCount == 0) {
-                    uiText(
-                        vi = "Chưa có món ăn",
-                        en = "No food added"
-                    )
-                } else {
-                    uiText(
-                        vi = "$foodCount món ăn",
-                        en = "$foodCount food items"
-                    )
-                },
-                style = MaterialTheme.typography.bodySmall,
-                color = MaterialTheme.colorScheme.onSurfaceVariant
-            )
-        }
-
-        Column(
-            horizontalAlignment = Alignment.End,
-            verticalArrangement = Arrangement.spacedBy(2.dp)
-        ) {
-            Text(
-                text = totalCalories.toString(),
-                style = MaterialTheme.typography.titleLarge,
-                fontWeight = FontWeight.Bold,
-                color = HealthAccent
-            )
-
-            Text(
-                text = stringResource(R.string.kcal),
-                style = MaterialTheme.typography.labelSmall,
-                color = MaterialTheme.colorScheme.onSurfaceVariant
-            )
-        }
-    }
-}
-
-@Composable
-private fun EmptyMealContent() {
-    Box(
-        modifier = Modifier
-            .fillMaxWidth()
-            .background(
-                color = HealthAccent.copy(alpha = 0.06f),
-                shape = RoundedCornerShape(13.dp)
-            )
-            .padding(14.dp)
-    ) {
-        Text(
-            text = stringResource(R.string.no_food_entries),
-            style = MaterialTheme.typography.bodyMedium,
-            color = MaterialTheme.colorScheme.onSurfaceVariant
-        )
-    }
-}
-
-@Composable
-private fun MealEntryRow(
-    entry: MealEntry,
-    onDeleteClick: () -> Unit
-) {
-    Row(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(vertical = 10.dp),
-        verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.spacedBy(10.dp)
-    ) {
-        Column(
-            modifier = Modifier.weight(1f),
-            verticalArrangement = Arrangement.spacedBy(3.dp)
-        ) {
-            Text(
-                text = entry.foodNameSnapshot.displayText(),
-                style = MaterialTheme.typography.bodyLarge,
-                fontWeight = FontWeight.Bold,
-                maxLines = 1,
-                overflow = TextOverflow.Ellipsis
-            )
-
-            Text(
-                text = "${entry.serving} x ${entry.servingDescriptionSnapshot.displayText()}",
-                style = MaterialTheme.typography.bodyMedium,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
-                maxLines = 1,
-                overflow = TextOverflow.Ellipsis
-            )
-        }
-
-        Column(
-            horizontalAlignment = Alignment.End,
-            verticalArrangement = Arrangement.spacedBy(5.dp)
-        ) {
-            Text(
-                text = "${entry.totalCalories} ${stringResource(R.string.kcal)}",
-                style = MaterialTheme.typography.bodyMedium,
-                fontWeight = FontWeight.Bold,
-                color = HealthAccent
-            )
-
-            TextButton(
-                onClick = onDeleteClick,
-                contentPadding = PaddingValues(
-                    horizontal = 8.dp,
-                    vertical = 2.dp
-                )
-            ) {
-                Text(
-                    text = stringResource(R.string.delete),
-                    color = MaterialTheme.colorScheme.error,
-                    style = MaterialTheme.typography.labelMedium,
-                    fontWeight = FontWeight.SemiBold
-                )
-            }
-        }
-    }
-}
-
-/* =========================================================
-   ADD FOOD DIALOG
-   ========================================================= */
-
 @Composable
 fun AddFoodDialog(
     mode: AddFoodDialogMode,
@@ -668,7 +145,76 @@ fun AddFoodDialog(
 }
 
 @Composable
-private fun AddFoodMethodContent(
+fun DialogHeader(
+    title: String,
+    subtitle: String,
+    onCloseClick: () -> Unit,
+    onBackClick: (() -> Unit)? = null
+) {
+    Column(
+        verticalArrangement = Arrangement.spacedBy(8.dp)
+    ) {
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.SpaceBetween
+        ) {
+            if (onBackClick != null) {
+                TextButton(
+                    onClick = onBackClick
+                ) {
+                    Text(
+                        text = "< ${
+                            uiText(
+                                vi = "Quay lại",
+                                en = "Back"
+                            )
+                        }",
+                        color = HealthAccent,
+                        fontWeight = FontWeight.SemiBold
+                    )
+                }
+            } else {
+                Spacer(
+                    modifier = Modifier.size(1.dp)
+                )
+            }
+
+            TextButton(
+                onClick = onCloseClick
+            ) {
+                Text(
+                    text = uiText(
+                        vi = "Đóng",
+                        en = "Close"
+                    ),
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+            }
+        }
+
+        Text(
+            text = title,
+            style = MaterialTheme.typography.headlineSmall,
+            fontWeight = FontWeight.Bold
+        )
+
+        Text(
+            text = subtitle,
+            style = MaterialTheme.typography.bodyMedium,
+            color = MaterialTheme.colorScheme.onSurfaceVariant
+        )
+
+        HorizontalDivider(
+            color = MaterialTheme.colorScheme.outlineVariant
+        )
+    }
+}
+
+//LOCALIZATION HELPERS
+
+@Composable
+fun AddFoodMethodContent(
     mealType: MealType,
     onExistingFoodClick: () -> Unit,
     onCustomFoodClick: () -> Unit,
@@ -750,7 +296,7 @@ private fun AddFoodMethodContent(
 }
 
 @Composable
-private fun AddFoodMethodItem(
+fun AddFoodMethodItem(
     title: String,
     description: String,
     onClick: () -> Unit
@@ -796,7 +342,7 @@ private fun AddFoodMethodItem(
    ========================================================= */
 
 @Composable
-private fun ExistingFoodContent(
+fun ExistingFoodContent(
     mealType: MealType,
     searchQuery: String,
     searchResults: List<Food>,
@@ -956,7 +502,7 @@ private fun ExistingFoodContent(
 }
 
 @Composable
-private fun FoodSearchResultRow(
+fun FoodSearchResultRow(
     food: Food,
     isSelected: Boolean,
     onClick: () -> Unit
@@ -1034,7 +580,7 @@ private fun FoodSearchResultRow(
 }
 
 @Composable
-private fun SelectedFoodSummary(
+fun SelectedFoodSummary(
     food: Food
 ) {
     Card(
@@ -1094,12 +640,10 @@ private fun SelectedFoodSummary(
     }
 }
 
-/* =========================================================
-   CUSTOM FOOD DIALOG
-   ========================================================= */
+// CUSTOM FOOD DIALOG
 
 @Composable
-private fun CustomFoodContent(
+fun CustomFoodContent(
     mealType: MealType,
     name: String,
     caloriesPerServing: String,
@@ -1288,92 +832,7 @@ private fun CustomFoodContent(
    ========================================================= */
 
 @Composable
-private fun DialogHeader(
-    title: String,
-    subtitle: String,
-    onCloseClick: () -> Unit,
-    onBackClick: (() -> Unit)? = null
-) {
-    Column(
-        verticalArrangement = Arrangement.spacedBy(8.dp)
-    ) {
-        Row(
-            modifier = Modifier.fillMaxWidth(),
-            verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.SpaceBetween
-        ) {
-            if (onBackClick != null) {
-                TextButton(
-                    onClick = onBackClick
-                ) {
-                    Text(
-                        text = "< ${
-                            uiText(
-                                vi = "Quay lại",
-                                en = "Back"
-                            )
-                        }",
-                        color = HealthAccent,
-                        fontWeight = FontWeight.SemiBold
-                    )
-                }
-            } else {
-                Spacer(
-                    modifier = Modifier.size(1.dp)
-                )
-            }
-
-            TextButton(
-                onClick = onCloseClick
-            ) {
-                Text(
-                    text = uiText(
-                        vi = "Đóng",
-                        en = "Close"
-                    ),
-                    color = MaterialTheme.colorScheme.onSurfaceVariant
-                )
-            }
-        }
-
-        Text(
-            text = title,
-            style = MaterialTheme.typography.headlineSmall,
-            fontWeight = FontWeight.Bold
-        )
-
-        Text(
-            text = subtitle,
-            style = MaterialTheme.typography.bodyMedium,
-            color = MaterialTheme.colorScheme.onSurfaceVariant
-        )
-
-        HorizontalDivider(
-            color = MaterialTheme.colorScheme.outlineVariant
-        )
-    }
-}
-
-/* =========================================================
-   LOCALIZATION HELPERS
-   ========================================================= */
-
-@Composable
-private fun LocalizedText.displayText(): String {
-    val language = LocalConfiguration
-        .current
-        .locales[0]
-        .language
-
-    return if (language == "vi") {
-        vi
-    } else {
-        en
-    }
-}
-
-@Composable
-private fun uiText(
+fun uiText(
     vi: String,
     en: String
 ): String {
@@ -1388,3 +847,4 @@ private fun uiText(
         en
     }
 }
+
