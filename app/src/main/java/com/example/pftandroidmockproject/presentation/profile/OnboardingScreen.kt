@@ -58,7 +58,7 @@ import com.example.pftandroidmockproject.presentation.profile.components.Profile
 import com.example.pftandroidmockproject.presentation.profile.components.ProfileTextField
 import com.example.pftandroidmockproject.presentation.theme.HealthBackgroundBottom
 import com.example.pftandroidmockproject.presentation.theme.HealthBackgroundTop
-import com.example.pftandroidmockproject.presentation.theme.HealthGreen
+import com.example.pftandroidmockproject.presentation.theme.HealthAccent
 import java.time.LocalDate
 
 @Composable
@@ -184,7 +184,7 @@ private fun OnboardingContent(
                 modifier = Modifier.fillMaxWidth(),
                 shape = RoundedCornerShape(20.dp),
                 colors = CardDefaults.cardColors(
-                    containerColor = Color.White
+                    containerColor = MaterialTheme.colorScheme.surface
                 ),
                 elevation = CardDefaults.cardElevation(
                     defaultElevation = 4.dp
@@ -297,9 +297,9 @@ private fun OnboardingContent(
                             .height(52.dp),
                         shape = RoundedCornerShape(12.dp),
                         colors = ButtonDefaults.buttonColors(
-                            containerColor = HealthGreen,
+                            containerColor = HealthAccent,
                             contentColor = Color.White,
-                            disabledContainerColor = HealthGreen.copy(
+                            disabledContainerColor = HealthAccent.copy(
                                 alpha = 0.55f
                             ),
                             disabledContentColor = Color.White

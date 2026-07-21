@@ -18,7 +18,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.example.pftandroidmockproject.R
 import com.example.pftandroidmockproject.domain.model.activity.ActivityLevel
-import com.example.pftandroidmockproject.presentation.theme.HealthGreen
+import com.example.pftandroidmockproject.presentation.theme.HealthAccent
 import com.example.pftandroidmockproject.presentation.theme.HealthSecondaryText
 import kotlin.collections.indexOf
 import kotlin.math.roundToInt
@@ -63,7 +63,7 @@ fun ActivityLevelSlider(
                 },
                 style = MaterialTheme.typography.labelMedium,
                 fontWeight = FontWeight.Bold,
-                color = HealthGreen
+                color = HealthAccent
             )
         }
 
@@ -79,8 +79,8 @@ fun ActivityLevelSlider(
             valueRange = 0f..options.lastIndex.toFloat(),
             steps = (options.size - 2).coerceAtLeast(0),
             colors = SliderDefaults.colors(
-                thumbColor = HealthGreen,
-                activeTrackColor = HealthGreen,
+                thumbColor = HealthAccent,
+                activeTrackColor = HealthAccent,
                 inactiveTrackColor = Color(0xFFE1E5E4)
             ),
             modifier = Modifier

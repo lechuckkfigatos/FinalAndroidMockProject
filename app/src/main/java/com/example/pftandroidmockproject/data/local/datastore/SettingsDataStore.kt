@@ -4,6 +4,8 @@ import android.content.Context
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
+import com.example.pftandroidmockproject.domain.model.setting.AppAccentColor
+import com.example.pftandroidmockproject.domain.model.setting.AppFontSize
 import com.example.pftandroidmockproject.domain.model.setting.AppLanguage
 import com.example.pftandroidmockproject.domain.model.setting.AppSettings
 import com.example.pftandroidmockproject.domain.model.setting.AppThemeMode
@@ -26,6 +28,8 @@ class SettingsDataStore @Inject constructor(
     private object Keys {
         val LANGUAGE = stringPreferencesKey("language")
         val THEME_MODE = stringPreferencesKey("theme_mode")
+        val FONT_SIZE = stringPreferencesKey("font_size")
+        val ACCENT_COLOR = stringPreferencesKey("accent_color")
     }
 
     val settings: Flow<AppSettings> =
@@ -46,9 +50,27 @@ class SettingsDataStore @Inject constructor(
                 }
                 ?: AppThemeMode.SYSTEM
 
+            val fontSize = preferences[Keys.FONT_SIZE]
+                ?.let { value ->
+                    runCatching {
+                        AppFontSize.valueOf(value)
+                    }.getOrNull()
+                }
+                ?: AppFontSize.MEDIUM
+
+            val accentColor = preferences[Keys.ACCENT_COLOR]
+                ?.let { value ->
+                    runCatching {
+                        AppAccentColor.valueOf(value)
+                    }.getOrNull()
+                }
+                ?: AppAccentColor.GREEN
+
             AppSettings(
                 language = language,
-                themeMode = themeMode
+                themeMode = themeMode,
+                fontSize = fontSize,
+                accentColor = accentColor
             )
         }
 
@@ -61,6 +83,18 @@ class SettingsDataStore @Inject constructor(
     suspend fun updateThemeMode(themeMode: AppThemeMode) {
         context.settingsDataStore.edit { preferences ->
             preferences[Keys.THEME_MODE] = themeMode.name
+        }
+    }
+
+    suspend fun updateFontSize(fontSize: AppFontSize) {
+        context.settingsDataStore.edit { preferences ->
+            preferences[Keys.FONT_SIZE] = fontSize.name
+        }
+    }
+
+    suspend fun updateAccentColor(accentColor: AppAccentColor) {
+        context.settingsDataStore.edit { preferences ->
+            preferences[Keys.ACCENT_COLOR] = accentColor.name
         }
     }
 }

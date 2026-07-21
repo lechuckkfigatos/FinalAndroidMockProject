@@ -27,8 +27,8 @@ import com.example.pftandroidmockproject.R
 import com.example.pftandroidmockproject.presentation.mapper.labelRes
 import com.example.pftandroidmockproject.presentation.profile.ProfileUiState
 import com.example.pftandroidmockproject.presentation.theme.HealthDivider
-import com.example.pftandroidmockproject.presentation.theme.HealthGreen
-import com.example.pftandroidmockproject.presentation.theme.HealthGreenSoft
+import com.example.pftandroidmockproject.presentation.theme.HealthAccent
+import com.example.pftandroidmockproject.presentation.theme.HealthAccentSoft
 import java.text.NumberFormat
 import java.util.Locale
 
@@ -63,7 +63,7 @@ fun HealthPreviewCard(
         modifier = modifier.fillMaxWidth(),
         shape = RoundedCornerShape(17.dp),
         colors = CardDefaults.cardColors(
-            containerColor = HealthGreenSoft
+            containerColor = HealthAccentSoft
         ),
         elevation = CardDefaults.cardElevation(
             defaultElevation = 0.dp
@@ -85,7 +85,7 @@ fun HealthPreviewCard(
                 Text(
                     text = stringResource(R.string.daily_calorie_target),
                     style = MaterialTheme.typography.labelMedium,
-                    color = HealthGreen
+                    color = HealthAccent
                 )
 
                 Row(
@@ -96,14 +96,14 @@ fun HealthPreviewCard(
                         text = tdeeText,
                         style = MaterialTheme.typography.titleLarge,
                         fontWeight = FontWeight.Bold,
-                        color = HealthGreen
+                        color = HealthAccent
                     )
 
                     Text(
                         text = stringResource(R.string.kcal).uppercase(),
                         style = MaterialTheme.typography.labelSmall,
                         fontWeight = FontWeight.SemiBold,
-                        color = HealthGreen.copy(alpha = 0.65f),
+                        color = HealthAccent.copy(alpha = 0.65f),
                         modifier = Modifier.padding(
                             bottom = 3.dp
                         )
@@ -127,7 +127,7 @@ fun HealthPreviewCard(
                 Text(
                     text = stringResource(R.string.bmi),
                     style = MaterialTheme.typography.labelMedium,
-                    color = HealthGreen
+                    color = HealthAccent
                 )
 
                 Row(
@@ -138,12 +138,12 @@ fun HealthPreviewCard(
                         text = bmiText,
                         style = MaterialTheme.typography.titleLarge,
                         fontWeight = FontWeight.Bold,
-                        color = HealthGreen
+                        color = HealthAccent
                     )
 
                     if (bmiCategoryText != null) {
                         Surface(
-                            color = HealthGreen.copy(alpha = 0.10f),
+                            color = HealthAccent.copy(alpha = 0.10f),
                             shape = RoundedCornerShape(50)
                         ) {
                             Text(
@@ -155,7 +155,7 @@ fun HealthPreviewCard(
                                 maxLines = 1,
                                 overflow = TextOverflow.Ellipsis,
                                 style = MaterialTheme.typography.labelSmall,
-                                color = HealthGreen
+                                color = HealthAccent
                             )
                         }
                     }

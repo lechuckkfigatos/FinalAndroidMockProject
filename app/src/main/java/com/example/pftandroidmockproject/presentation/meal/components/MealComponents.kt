@@ -52,7 +52,7 @@ import com.example.pftandroidmockproject.presentation.mapper.labelRes
 import com.example.pftandroidmockproject.presentation.profile.components.HealthTrackerHeader
 import com.example.pftandroidmockproject.presentation.meal.MealUiState
 import com.example.pftandroidmockproject.presentation.theme.HealthBackgroundTop
-import com.example.pftandroidmockproject.presentation.theme.HealthGreen
+import com.example.pftandroidmockproject.presentation.theme.HealthAccent
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
@@ -150,7 +150,7 @@ fun MealDateCard(
         modifier = modifier.fillMaxWidth(),
         shape = RoundedCornerShape(16.dp),
         colors = CardDefaults.cardColors(
-            containerColor = Color.White
+            containerColor = MaterialTheme.colorScheme.surface
         ),
         elevation = CardDefaults.cardElevation(
             defaultElevation = 2.dp
@@ -205,7 +205,7 @@ fun MealDateCard(
                                     vi = "Quay lại hôm nay",
                                     en = "Back to today"
                                 ),
-                                color = HealthGreen,
+                                color = HealthAccent,
                                 fontWeight = FontWeight.SemiBold
                             )
                         }
@@ -226,7 +226,7 @@ fun MealDateCard(
                 modifier = Modifier
                     .fillMaxWidth()
                     .background(
-                        color = HealthGreen.copy(alpha = 0.08f),
+                        color = HealthAccent.copy(alpha = 0.08f),
                         shape = RoundedCornerShape(14.dp)
                     )
                     .padding(
@@ -263,13 +263,13 @@ fun MealDateCard(
                         text = totalDayCalories.toString(),
                         style = MaterialTheme.typography.titleLarge,
                         fontWeight = FontWeight.Bold,
-                        color = HealthGreen
+                        color = HealthAccent
                     )
 
                     Text(
                         text = stringResource(R.string.kcal),
                         style = MaterialTheme.typography.labelSmall,
-                        color = HealthGreen.copy(alpha = 0.75f)
+                        color = HealthAccent.copy(alpha = 0.75f)
                     )
                 }
             }
@@ -289,7 +289,7 @@ private fun DateNavigationButton(
             .clickable(onClick = onClick),
         shape = RoundedCornerShape(10.dp),
         colors = CardDefaults.cardColors(
-            containerColor = HealthGreen.copy(alpha = 0.10f)
+            containerColor = HealthAccent.copy(alpha = 0.10f)
         ),
         elevation = CardDefaults.cardElevation(
             defaultElevation = 0.dp
@@ -303,7 +303,7 @@ private fun DateNavigationButton(
                 text = text,
                 style = MaterialTheme.typography.headlineSmall,
                 fontWeight = FontWeight.Bold,
-                color = HealthGreen
+                color = HealthAccent
             )
         }
     }
@@ -325,7 +325,7 @@ fun MealSectionTitle(
                     height = 21.dp
                 )
                 .background(
-                    color = HealthGreen,
+                    color = HealthAccent,
                     shape = RoundedCornerShape(50)
                 )
         )
@@ -362,12 +362,12 @@ fun MealTypeCard(
             .clickable(onClick = onCardClick),
         shape = RoundedCornerShape(20.dp),
         colors = CardDefaults.cardColors(
-            containerColor = Color.White
+            containerColor = MaterialTheme.colorScheme.surface
         ),
         border = BorderStroke(
             width = if (isSelected) 2.dp else 1.dp,
             color = if (isSelected) {
-                HealthGreen.copy(alpha = 0.75f)
+                HealthAccent.copy(alpha = 0.75f)
             } else {
                 MaterialTheme.colorScheme.outlineVariant
             }
@@ -420,7 +420,7 @@ fun MealTypeCard(
                     .height(48.dp),
                 shape = RoundedCornerShape(13.dp),
                 colors = ButtonDefaults.buttonColors(
-                    containerColor = HealthGreen,
+                    containerColor = HealthAccent,
                     contentColor = Color.White
                 )
             ) {
@@ -482,7 +482,7 @@ private fun MealCardHeader(
                 text = totalCalories.toString(),
                 style = MaterialTheme.typography.titleLarge,
                 fontWeight = FontWeight.Bold,
-                color = HealthGreen
+                color = HealthAccent
             )
 
             Text(
@@ -500,7 +500,7 @@ private fun EmptyMealContent() {
         modifier = Modifier
             .fillMaxWidth()
             .background(
-                color = HealthGreen.copy(alpha = 0.06f),
+                color = HealthAccent.copy(alpha = 0.06f),
                 shape = RoundedCornerShape(13.dp)
             )
             .padding(14.dp)
@@ -554,7 +554,7 @@ private fun MealEntryRow(
                 text = "${entry.totalCalories} ${stringResource(R.string.kcal)}",
                 style = MaterialTheme.typography.bodyMedium,
                 fontWeight = FontWeight.Bold,
-                color = HealthGreen
+                color = HealthAccent
             )
 
             TextButton(
@@ -612,7 +612,7 @@ fun AddFoodDialog(
                 .fillMaxHeight(0.86f),
             shape = RoundedCornerShape(24.dp),
             colors = CardDefaults.cardColors(
-                containerColor = Color.White
+                containerColor = MaterialTheme.colorScheme.surface
             ),
             elevation = CardDefaults.cardElevation(
                 defaultElevation = 8.dp
@@ -738,7 +738,7 @@ private fun AddFoodMethodContent(
                 .height(50.dp),
             shape = RoundedCornerShape(14.dp),
             colors = ButtonDefaults.outlinedButtonColors(
-                contentColor = HealthGreen
+                contentColor = HealthAccent
             )
         ) {
             Text(
@@ -761,11 +761,11 @@ private fun AddFoodMethodItem(
             .clickable(onClick = onClick),
         shape = RoundedCornerShape(17.dp),
         colors = CardDefaults.cardColors(
-            containerColor = HealthGreen.copy(alpha = 0.08f)
+            containerColor = HealthAccent.copy(alpha = 0.08f)
         ),
         border = BorderStroke(
             width = 1.dp,
-            color = HealthGreen.copy(alpha = 0.25f)
+            color = HealthAccent.copy(alpha = 0.25f)
         ),
         elevation = CardDefaults.cardElevation(
             defaultElevation = 0.dp
@@ -779,7 +779,7 @@ private fun AddFoodMethodItem(
                 text = title,
                 style = MaterialTheme.typography.titleMedium,
                 fontWeight = FontWeight.Bold,
-                color = HealthGreen
+                color = HealthAccent
             )
 
             Text(
@@ -872,7 +872,7 @@ private fun ExistingFoodContent(
                     .fillMaxWidth()
                     .weight(1f)
                     .background(
-                        color = HealthGreen.copy(alpha = 0.06f),
+                        color = HealthAccent.copy(alpha = 0.06f),
                         shape = RoundedCornerShape(14.dp)
                     ),
                 contentAlignment = Alignment.Center
@@ -943,7 +943,7 @@ private fun ExistingFoodContent(
                 .height(52.dp),
             shape = RoundedCornerShape(14.dp),
             colors = ButtonDefaults.buttonColors(
-                containerColor = HealthGreen,
+                containerColor = HealthAccent,
                 contentColor = Color.White
             )
         ) {
@@ -968,7 +968,7 @@ private fun FoodSearchResultRow(
         shape = RoundedCornerShape(14.dp),
         colors = CardDefaults.cardColors(
             containerColor = if (isSelected) {
-                HealthGreen.copy(alpha = 0.13f)
+                HealthAccent.copy(alpha = 0.13f)
             } else {
                 Color(0xFFF4F7F5)
             }
@@ -976,7 +976,7 @@ private fun FoodSearchResultRow(
         border = BorderStroke(
             width = if (isSelected) 2.dp else 1.dp,
             color = if (isSelected) {
-                HealthGreen
+                HealthAccent
             } else {
                 MaterialTheme.colorScheme.outlineVariant
             }
@@ -1020,7 +1020,7 @@ private fun FoodSearchResultRow(
                     text = food.caloriesPerServing.toString(),
                     style = MaterialTheme.typography.titleMedium,
                     fontWeight = FontWeight.Bold,
-                    color = HealthGreen
+                    color = HealthAccent
                 )
 
                 Text(
@@ -1041,11 +1041,11 @@ private fun SelectedFoodSummary(
         modifier = Modifier.fillMaxWidth(),
         shape = RoundedCornerShape(14.dp),
         colors = CardDefaults.cardColors(
-            containerColor = HealthGreen.copy(alpha = 0.09f)
+            containerColor = HealthAccent.copy(alpha = 0.09f)
         ),
         border = BorderStroke(
             width = 1.dp,
-            color = HealthGreen.copy(alpha = 0.28f)
+            color = HealthAccent.copy(alpha = 0.28f)
         )
     ) {
         Row(
@@ -1066,7 +1066,7 @@ private fun SelectedFoodSummary(
                     ),
                     style = MaterialTheme.typography.labelMedium,
                     fontWeight = FontWeight.Bold,
-                    color = HealthGreen
+                    color = HealthAccent
                 )
 
                 Text(
@@ -1088,7 +1088,7 @@ private fun SelectedFoodSummary(
                 text = "${food.caloriesPerServing} ${stringResource(R.string.kcal)}",
                 style = MaterialTheme.typography.titleMedium,
                 fontWeight = FontWeight.Bold,
-                color = HealthGreen
+                color = HealthAccent
             )
         }
     }
@@ -1233,7 +1233,7 @@ private fun CustomFoodContent(
                     modifier = Modifier.fillMaxWidth(),
                     shape = RoundedCornerShape(14.dp),
                     colors = CardDefaults.cardColors(
-                        containerColor = HealthGreen.copy(alpha = 0.08f)
+                        containerColor = HealthAccent.copy(alpha = 0.08f)
                     )
                 ) {
                     Column(
@@ -1253,7 +1253,7 @@ private fun CustomFoodContent(
                             text = mealTypeText,
                             style = MaterialTheme.typography.titleMedium,
                             fontWeight = FontWeight.Bold,
-                            color = HealthGreen
+                            color = HealthAccent
                         )
                     }
                 }
@@ -1271,7 +1271,7 @@ private fun CustomFoodContent(
                 .height(52.dp),
             shape = RoundedCornerShape(14.dp),
             colors = ButtonDefaults.buttonColors(
-                containerColor = HealthGreen,
+                containerColor = HealthAccent,
                 contentColor = Color.White
             )
         ) {
@@ -1313,7 +1313,7 @@ private fun DialogHeader(
                                 en = "Back"
                             )
                         }",
-                        color = HealthGreen,
+                        color = HealthAccent,
                         fontWeight = FontWeight.SemiBold
                     )
                 }

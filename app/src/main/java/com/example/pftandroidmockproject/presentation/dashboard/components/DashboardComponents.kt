@@ -23,7 +23,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.example.pftandroidmockproject.R
-import com.example.pftandroidmockproject.presentation.theme.HealthGreen
+import com.example.pftandroidmockproject.presentation.theme.HealthAccent
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
@@ -33,7 +33,7 @@ fun DashboardLoadingCard() {
         modifier = Modifier.fillMaxWidth(),
         shape = RoundedCornerShape(20.dp),
         colors = CardDefaults.cardColors(
-            containerColor = Color.White
+            containerColor = MaterialTheme.colorScheme.surface
         )
     ) {
         Box(
@@ -55,7 +55,7 @@ fun DashboardMessageCard(
         modifier = Modifier.fillMaxWidth(),
         shape = RoundedCornerShape(20.dp),
         colors = CardDefaults.cardColors(
-            containerColor = Color.White
+            containerColor = MaterialTheme.colorScheme.surface
         )
     ) {
         Text(
@@ -102,7 +102,7 @@ fun DashboardDateCard(
         modifier = modifier.fillMaxWidth(),
         shape = RoundedCornerShape(16.dp),
         colors = CardDefaults.cardColors(
-            containerColor = Color.White
+            containerColor = MaterialTheme.colorScheme.surface
         ),
         elevation = CardDefaults.cardElevation(
             defaultElevation = 2.dp
@@ -136,7 +136,7 @@ fun DashboardDateCard(
                 .width(4.dp)
                 .height(20.dp)
                 .background(
-                    color = HealthGreen,
+                    color = HealthAccent,
                     shape = RoundedCornerShape(50)
                 )
         )

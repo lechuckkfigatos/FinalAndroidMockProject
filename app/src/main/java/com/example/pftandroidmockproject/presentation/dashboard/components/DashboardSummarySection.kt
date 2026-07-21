@@ -24,7 +24,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.example.pftandroidmockproject.R
 import com.example.pftandroidmockproject.presentation.dashboard.DashboardUiState
-import com.example.pftandroidmockproject.presentation.theme.HealthGreen
+import com.example.pftandroidmockproject.presentation.theme.HealthAccent
 import java.text.NumberFormat
 
 @Composable
@@ -69,7 +69,7 @@ fun DashboardSummarySection(
                 valueColor = if (uiState.remainingCalories < 0) {
                     MaterialTheme.colorScheme.error
                 } else {
-                    HealthGreen
+                    HealthAccent
                 },
                 modifier = Modifier.weight(1f)
             )
@@ -82,8 +82,9 @@ private fun DashboardSummaryCard(
     title: String,
     value: Int,
     modifier: Modifier = Modifier,
-    valueColor: Color = HealthGreen
+    valueColor: Color? = null
 ) {
+    val resolvedValueColor = valueColor ?: HealthAccent
     val formattedValue = remember(value) {
         NumberFormat
             .getIntegerInstance()
@@ -94,7 +95,7 @@ private fun DashboardSummaryCard(
         modifier = modifier,
         shape = RoundedCornerShape(18.dp),
         colors = CardDefaults.cardColors(
-            containerColor = Color.White
+            containerColor = MaterialTheme.colorScheme.surface
         ),
         elevation = CardDefaults.cardElevation(
             defaultElevation = 2.dp
@@ -115,7 +116,7 @@ private fun DashboardSummaryCard(
                     .width(4.dp)
                     .height(42.dp)
                     .background(
-                        color = valueColor,
+                        color = resolvedValueColor,
                         shape = RoundedCornerShape(50)
                     )
             )
@@ -139,7 +140,7 @@ private fun DashboardSummaryCard(
                         text = formattedValue,
                         style = MaterialTheme.typography.titleLarge,
                         fontWeight = FontWeight.Bold,
-                        color = valueColor
+                        color = resolvedValueColor
                     )
 
                     Text(

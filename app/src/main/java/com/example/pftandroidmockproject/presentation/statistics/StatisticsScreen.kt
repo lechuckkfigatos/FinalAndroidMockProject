@@ -48,7 +48,7 @@ import com.example.pftandroidmockproject.domain.model.statistic.DailyStatistic
 import com.example.pftandroidmockproject.presentation.profile.components.HealthTrackerHeader
 import com.example.pftandroidmockproject.presentation.theme.HealthBackgroundBottom
 import com.example.pftandroidmockproject.presentation.theme.HealthBackgroundTop
-import com.example.pftandroidmockproject.presentation.theme.HealthGreen
+import com.example.pftandroidmockproject.presentation.theme.HealthAccent
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 import kotlin.math.abs
@@ -244,7 +244,7 @@ private fun StatisticsWeekCard(
         modifier = modifier.fillMaxWidth(),
         shape = RoundedCornerShape(16.dp),
         colors = CardDefaults.cardColors(
-            containerColor = Color.White
+            containerColor = MaterialTheme.colorScheme.surface
         ),
         elevation = CardDefaults.cardElevation(
             defaultElevation = 2.dp
@@ -292,7 +292,7 @@ private fun StatisticsWeekCard(
                         ) {
                             Text(
                                 text = stringResource(R.string.today),
-                                color = HealthGreen,
+                                color = HealthAccent,
                                 fontWeight = FontWeight.SemiBold
                             )
                         }
@@ -313,7 +313,7 @@ private fun StatisticsWeekCard(
                 modifier = Modifier
                     .fillMaxWidth()
                     .background(
-                        color = HealthGreen.copy(alpha = 0.08f),
+                        color = HealthAccent.copy(alpha = 0.08f),
                         shape = RoundedCornerShape(14.dp)
                     )
                     .padding(
@@ -326,7 +326,7 @@ private fun StatisticsWeekCard(
                 WeeklyTotalItem(
                     title = stringResource(R.string.total_intake),
                     calories = totalIntakeCalories,
-                    color = HealthGreen,
+                    color = HealthAccent,
                     modifier = Modifier.weight(1f)
                 )
 
@@ -354,7 +354,7 @@ private fun StatisticsNavigationButton(
             .clickable(onClick = onClick),
         shape = RoundedCornerShape(10.dp),
         colors = CardDefaults.cardColors(
-            containerColor = HealthGreen.copy(alpha = 0.10f)
+            containerColor = HealthAccent.copy(alpha = 0.10f)
         ),
         elevation = CardDefaults.cardElevation(
             defaultElevation = 0.dp
@@ -368,7 +368,7 @@ private fun StatisticsNavigationButton(
                 text = text,
                 style = MaterialTheme.typography.headlineSmall,
                 fontWeight = FontWeight.Bold,
-                color = HealthGreen
+                color = HealthAccent
             )
         }
     }
@@ -428,7 +428,7 @@ private fun WeeklyOverviewCard(
         modifier = modifier.fillMaxWidth(),
         shape = RoundedCornerShape(20.dp),
         colors = CardDefaults.cardColors(
-            containerColor = Color.White
+            containerColor = MaterialTheme.colorScheme.surface
         ),
         elevation = CardDefaults.cardElevation(
             defaultElevation = 2.dp
@@ -491,11 +491,11 @@ private fun StatisticSmallCard(
         modifier = modifier,
         shape = RoundedCornerShape(16.dp),
         colors = CardDefaults.cardColors(
-            containerColor = HealthGreen.copy(alpha = 0.08f)
+            containerColor = HealthAccent.copy(alpha = 0.08f)
         ),
         border = BorderStroke(
             width = 1.dp,
-            color = HealthGreen.copy(alpha = 0.18f)
+            color = HealthAccent.copy(alpha = 0.18f)
         )
     ) {
         Column(
@@ -514,7 +514,7 @@ private fun StatisticSmallCard(
                 text = "$value ${stringResource(R.string.kcal)}",
                 style = MaterialTheme.typography.titleMedium,
                 fontWeight = FontWeight.Bold,
-                color = HealthGreen
+                color = HealthAccent
             )
         }
     }
@@ -536,7 +536,7 @@ private fun WeeklyLineChartCard(
         modifier = modifier.fillMaxWidth(),
         shape = RoundedCornerShape(18.dp),
         colors = CardDefaults.cardColors(
-            containerColor = Color.White
+            containerColor = MaterialTheme.colorScheme.surface
         ),
         elevation = CardDefaults.cardElevation(
             defaultElevation = 2.dp
@@ -565,7 +565,7 @@ private fun WeeklyLineChartCard(
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     ChartLegendItem(
-                        color = HealthGreen,
+                        color = HealthAccent,
                         label = stringResource(R.string.intake)
                     )
 
@@ -666,6 +666,8 @@ private fun VerticalWeeklyLineChart(
                 }
             }
 
+            val intakeLineColor = HealthAccent
+
             Canvas(
                 modifier = Modifier
                     .weight(1f)
@@ -753,7 +755,7 @@ private fun VerticalWeeklyLineChart(
                 }
 
                 drawSeries(
-                    color = HealthGreen,
+                    color = intakeLineColor,
                     valueSelector = { statistic ->
                         statistic.intakeCalories
                     }
@@ -809,7 +811,7 @@ private fun DailyStatisticsListCard(
         modifier = modifier.fillMaxWidth(),
         shape = RoundedCornerShape(20.dp),
         colors = CardDefaults.cardColors(
-            containerColor = Color.White
+            containerColor = MaterialTheme.colorScheme.surface
         ),
         elevation = CardDefaults.cardElevation(
             defaultElevation = 2.dp
@@ -883,7 +885,7 @@ private fun DailyStatisticRow(
         val netColor = if (statistic.netCalories > statistic.targetCalories) {
             MaterialTheme.colorScheme.error
         } else {
-            HealthGreen
+            HealthAccent
         }
 
         Column(
@@ -916,7 +918,7 @@ private fun LoadingCard() {
         modifier = Modifier.fillMaxWidth(),
         shape = RoundedCornerShape(20.dp),
         colors = CardDefaults.cardColors(
-            containerColor = Color.White
+            containerColor = MaterialTheme.colorScheme.surface
         )
     ) {
         Box(
@@ -938,7 +940,7 @@ private fun MessageCard(
         modifier = Modifier.fillMaxWidth(),
         shape = RoundedCornerShape(20.dp),
         colors = CardDefaults.cardColors(
-            containerColor = Color.White
+            containerColor = MaterialTheme.colorScheme.surface
         )
     ) {
         Text(

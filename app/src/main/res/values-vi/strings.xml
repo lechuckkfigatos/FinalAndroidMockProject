@@ -54,6 +54,8 @@
     <string name="bmi_normal">Bình thường</string>
     <string name="bmi_overweight">Thừa cân</string>
     <string name="bmi_obese">Béo phì</string>
+    <string name="current_bmi">BMI hiện tại</string>
+    <string name="bmi_waiting_for_body_info">Nhập cân nặng và chiều cao để xem BMI.</string>
 
     <!-- Profile Validation Messages -->
     <string name="error_full_name_required">Vui lòng nhập họ tên</string>
@@ -170,6 +172,9 @@
     <!-- Settings Screen -->
     <string name="settings_title">Cài đặt</string>
     <string name="settings_subtitle">Tùy chỉnh thiết lập ứng dụng.</string>
+    <string name="edit_profile">Chỉnh hồ sơ</string>
+    <string name="lifestyle_and_goal">Lối sống và mục tiêu</string>
+    <string name="preferences">Tùy chọn</string>
     <string name="language">Ngôn ngữ</string>
     <string name="vietnamese">Tiếng Việt</string>
     <string name="english">Tiếng Anh</string>
@@ -177,6 +182,16 @@
     <string name="theme_system">Theo hệ thống</string>
     <string name="theme_light">Sáng</string>
     <string name="theme_dark">Tối</string>
+    <string name="theme_color">Màu giao diện</string>
+    <string name="theme_color_green">Xanh</string>
+    <string name="theme_color_red">Đỏ</string>
+    <string name="theme_color_yellow">Vàng</string>
+    <string name="theme_color_blue">Lam</string>
+    <string name="theme_color_purple">Tím</string>
+    <string name="font_size">Cỡ chữ</string>
+    <string name="font_size_small">Nhỏ</string>
+    <string name="font_size_medium">Vừa</string>
+    <string name="font_size_large">Lớn</string>
     <string name="settings_saved">Đã lưu cài đặt</string>
 
 </resources>

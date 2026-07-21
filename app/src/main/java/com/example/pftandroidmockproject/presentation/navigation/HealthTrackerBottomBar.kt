@@ -16,8 +16,8 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.example.pftandroidmockproject.presentation.theme.HealthBackgroundBottom
-import com.example.pftandroidmockproject.presentation.theme.HealthGreen
-import com.example.pftandroidmockproject.presentation.theme.HealthGreenSoft
+import com.example.pftandroidmockproject.presentation.theme.HealthAccent
+import com.example.pftandroidmockproject.presentation.theme.HealthAccentSoft
 import com.example.pftandroidmockproject.presentation.theme.HealthSecondaryText
 
 @Composable
@@ -50,9 +50,9 @@ fun HealthTrackerBottomBar(
                 },
                 alwaysShowLabel = true,
                 colors = NavigationBarItemDefaults.colors(
-                    selectedIconColor = HealthGreen,
-                    selectedTextColor = HealthGreen,
-                    indicatorColor = HealthGreenSoft,
+                    selectedIconColor = HealthAccent,
+                    selectedTextColor = HealthAccent,
+                    indicatorColor = HealthAccentSoft,
                     unselectedIconColor = HealthSecondaryText,
                     unselectedTextColor = HealthSecondaryText
                 )

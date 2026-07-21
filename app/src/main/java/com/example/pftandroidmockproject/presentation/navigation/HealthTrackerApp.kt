@@ -12,6 +12,7 @@ import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.example.pftandroidmockproject.presentation.theme.PFTAndroidMockProjectTheme
 
 @Composable
 fun HealthTrackerApp(
@@ -19,37 +20,44 @@ fun HealthTrackerApp(
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
 
-    if (uiState.isLoading || uiState.startDestination == null) {
-        AppLoadingScreen()
-        return
-    }
-
-    val navController = rememberNavController()
-
-    val backStackEntry by navController.currentBackStackEntryAsState()
-    val currentRoute = backStackEntry?.destination?.route
-
-    val shouldShowBottomBar = bottomNavDestinations.any { destination ->
-        destination.route == currentRoute
-    }
-
-    Scaffold(
-        bottomBar = {
-            if (shouldShowBottomBar) {
-                HealthTrackerBottomBar(
-                    currentRoute = currentRoute,
-                    onDestinationClick = { destination ->
-                        navController.navigateToBottomDestination(destination)
-                    }
-                )
-            }
+    PFTAndroidMockProjectTheme(
+        language = uiState.language,
+        themeMode = uiState.themeMode,
+        fontSize = uiState.fontSize,
+        accentColor = uiState.accentColor
+    ) {
+        if (uiState.isLoading || uiState.startDestination == null) {
+            AppLoadingScreen()
+            return@PFTAndroidMockProjectTheme
         }
-    ) { innerPadding ->
-        AppNavHost(
-            navController = navController,
-            startDestination = uiState.startDestination!!,
-            contentPadding = innerPadding
-        )
+
+        val navController = rememberNavController()
+
+        val backStackEntry by navController.currentBackStackEntryAsState()
+        val currentRoute = backStackEntry?.destination?.route
+
+        val shouldShowBottomBar = bottomNavDestinations.any { destination ->
+            destination.route == currentRoute
+        }
+
+        Scaffold(
+            bottomBar = {
+                if (shouldShowBottomBar) {
+                    HealthTrackerBottomBar(
+                        currentRoute = currentRoute,
+                        onDestinationClick = { destination ->
+                            navController.navigateToBottomDestination(destination)
+                        }
+                    )
+                }
+            }
+        ) { innerPadding ->
+            AppNavHost(
+                navController = navController,
+                startDestination = uiState.startDestination!!,
+                contentPadding = innerPadding
+            )
+        }
     }
 }
 

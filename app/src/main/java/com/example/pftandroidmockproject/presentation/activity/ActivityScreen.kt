@@ -61,7 +61,7 @@ import com.example.pftandroidmockproject.presentation.common.asString
 import com.example.pftandroidmockproject.presentation.profile.components.HealthTrackerHeader
 import com.example.pftandroidmockproject.presentation.theme.HealthBackgroundBottom
 import com.example.pftandroidmockproject.presentation.theme.HealthBackgroundTop
-import com.example.pftandroidmockproject.presentation.theme.HealthGreen
+import com.example.pftandroidmockproject.presentation.theme.HealthAccent
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
@@ -293,7 +293,7 @@ private fun ActivityDateCard(
         modifier = modifier.fillMaxWidth(),
         shape = RoundedCornerShape(16.dp),
         colors = CardDefaults.cardColors(
-            containerColor = Color.White
+            containerColor = MaterialTheme.colorScheme.surface
         ),
         elevation = CardDefaults.cardElevation(
             defaultElevation = 2.dp
@@ -345,7 +345,7 @@ private fun ActivityDateCard(
                         ) {
                             Text(
                                 text = stringResource(R.string.back_to_today),
-                                color = HealthGreen,
+                                color = HealthAccent,
                                 fontWeight = FontWeight.SemiBold
                             )
                         }
@@ -366,7 +366,7 @@ private fun ActivityDateCard(
                 modifier = Modifier
                     .fillMaxWidth()
                     .background(
-                        color = HealthGreen.copy(alpha = 0.08f),
+                        color = HealthAccent.copy(alpha = 0.08f),
                         shape = RoundedCornerShape(14.dp)
                     )
                     .padding(
@@ -400,13 +400,13 @@ private fun ActivityDateCard(
                         text = totalBurnedCalories.toString(),
                         style = MaterialTheme.typography.titleLarge,
                         fontWeight = FontWeight.Bold,
-                        color = HealthGreen
+                        color = HealthAccent
                     )
 
                     Text(
                         text = stringResource(R.string.kcal),
                         style = MaterialTheme.typography.labelSmall,
-                        color = HealthGreen.copy(alpha = 0.75f)
+                        color = HealthAccent.copy(alpha = 0.75f)
                     )
                 }
             }
@@ -426,7 +426,7 @@ private fun DateNavigationButton(
             .clickable(onClick = onClick),
         shape = RoundedCornerShape(10.dp),
         colors = CardDefaults.cardColors(
-            containerColor = HealthGreen.copy(alpha = 0.10f)
+            containerColor = HealthAccent.copy(alpha = 0.10f)
         ),
         elevation = CardDefaults.cardElevation(
             defaultElevation = 0.dp
@@ -440,7 +440,7 @@ private fun DateNavigationButton(
                 text = text,
                 style = MaterialTheme.typography.headlineSmall,
                 fontWeight = FontWeight.Bold,
-                color = HealthGreen
+                color = HealthAccent
             )
         }
     }
@@ -458,7 +458,7 @@ private fun AddActivityButton(
             .height(48.dp),
         shape = RoundedCornerShape(13.dp),
         colors = ButtonDefaults.buttonColors(
-            containerColor = HealthGreen,
+            containerColor = HealthAccent,
             contentColor = Color.White
         )
     ) {
@@ -485,7 +485,7 @@ private fun ActivitySectionTitle(
                     height = 21.dp
                 )
                 .background(
-                    color = HealthGreen,
+                    color = HealthAccent,
                     shape = RoundedCornerShape(50)
                 )
         )
@@ -508,7 +508,7 @@ private fun ActivityEntriesCard(
         modifier = modifier.fillMaxWidth(),
         shape = RoundedCornerShape(20.dp),
         colors = CardDefaults.cardColors(
-            containerColor = Color.White
+            containerColor = MaterialTheme.colorScheme.surface
         ),
         elevation = CardDefaults.cardElevation(
             defaultElevation = 2.dp
@@ -550,7 +550,7 @@ private fun EmptyActivityContent() {
         modifier = Modifier
             .fillMaxWidth()
             .background(
-                color = HealthGreen.copy(alpha = 0.06f),
+                color = HealthAccent.copy(alpha = 0.06f),
                 shape = RoundedCornerShape(13.dp)
             )
             .padding(14.dp)
@@ -604,7 +604,7 @@ private fun ActivityEntryRow(
                 text = "${entry.caloriesBurned} ${stringResource(R.string.kcal)}",
                 style = MaterialTheme.typography.bodyMedium,
                 fontWeight = FontWeight.Bold,
-                color = HealthGreen
+                color = HealthAccent
             )
 
             TextButton(
@@ -657,7 +657,7 @@ private fun AddActivityDialog(
                 .fillMaxHeight(0.86f),
             shape = RoundedCornerShape(24.dp),
             colors = CardDefaults.cardColors(
-                containerColor = Color.White
+                containerColor = MaterialTheme.colorScheme.surface
             ),
             elevation = CardDefaults.cardElevation(
                 defaultElevation = 8.dp
@@ -700,7 +700,7 @@ private fun AddActivityDialog(
                             .fillMaxWidth()
                             .weight(1f)
                             .background(
-                                color = HealthGreen.copy(alpha = 0.06f),
+                                color = HealthAccent.copy(alpha = 0.06f),
                                 shape = RoundedCornerShape(14.dp)
                             ),
                         contentAlignment = Alignment.Center
@@ -768,7 +768,7 @@ private fun AddActivityDialog(
                         .height(52.dp),
                     shape = RoundedCornerShape(14.dp),
                     colors = ButtonDefaults.buttonColors(
-                        containerColor = HealthGreen,
+                        containerColor = HealthAccent,
                         contentColor = Color.White
                     )
                 ) {
@@ -841,7 +841,7 @@ private fun ActivityTypeRow(
         shape = RoundedCornerShape(14.dp),
         colors = CardDefaults.cardColors(
             containerColor = if (isSelected) {
-                HealthGreen.copy(alpha = 0.13f)
+                HealthAccent.copy(alpha = 0.13f)
             } else {
                 Color(0xFFF4F7F5)
             }
@@ -849,7 +849,7 @@ private fun ActivityTypeRow(
         border = BorderStroke(
             width = if (isSelected) 2.dp else 1.dp,
             color = if (isSelected) {
-                HealthGreen
+                HealthAccent
             } else {
                 MaterialTheme.colorScheme.outlineVariant
             }
@@ -895,11 +895,11 @@ private fun SelectedActivitySummary(
         modifier = Modifier.fillMaxWidth(),
         shape = RoundedCornerShape(14.dp),
         colors = CardDefaults.cardColors(
-            containerColor = HealthGreen.copy(alpha = 0.09f)
+            containerColor = HealthAccent.copy(alpha = 0.09f)
         ),
         border = BorderStroke(
             width = 1.dp,
-            color = HealthGreen.copy(alpha = 0.28f)
+            color = HealthAccent.copy(alpha = 0.28f)
         )
     ) {
         Column(
@@ -910,7 +910,7 @@ private fun SelectedActivitySummary(
                 text = stringResource(R.string.selected_activity),
                 style = MaterialTheme.typography.labelMedium,
                 fontWeight = FontWeight.Bold,
-                color = HealthGreen
+                color = HealthAccent
             )
 
             Text(

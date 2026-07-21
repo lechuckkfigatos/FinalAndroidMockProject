@@ -17,7 +17,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.example.pftandroidmockproject.R
-import com.example.pftandroidmockproject.presentation.theme.HealthGreen
+import com.example.pftandroidmockproject.presentation.theme.HealthAccent
 
 @Composable
 fun DashboardShortcutSection(
@@ -36,7 +36,7 @@ fun DashboardShortcutSection(
                 .height(52.dp),
             shape = RoundedCornerShape(14.dp),
             colors = ButtonDefaults.buttonColors(
-                containerColor = HealthGreen,
+                containerColor = HealthAccent,
                 contentColor = Color.White
             )
         ) {
@@ -54,10 +54,10 @@ fun DashboardShortcutSection(
             shape = RoundedCornerShape(14.dp),
             border = BorderStroke(
                 width = 1.dp,
-                color = HealthGreen
+                color = HealthAccent
             ),
             colors = ButtonDefaults.outlinedButtonColors(
-                contentColor = HealthGreen
+                contentColor = HealthAccent
             )
         ) {
             Text(

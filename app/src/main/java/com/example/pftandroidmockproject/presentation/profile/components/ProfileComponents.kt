@@ -84,7 +84,7 @@ fun HealthTrackerHeader(
             modifier = Modifier
                 .size(36.dp)
                 .background(
-                    color = HealthGreen,
+                    color = HealthAccent,
                     shape = RoundedCornerShape(10.dp)
                 ),
             contentAlignment = Alignment.Center
@@ -98,7 +98,7 @@ fun HealthTrackerHeader(
             text = title,
             style = MaterialTheme.typography.titleLarge,
             fontWeight = FontWeight.Bold,
-            color = HealthGreen
+            color = HealthAccent
         )
     }
 }
@@ -226,7 +226,7 @@ fun ProfileTextField(
             modifier = Modifier.fillMaxWidth(),
             singleLine = true,
             keyboardOptions = keyboardOptions,
-            cursorBrush = SolidColor(HealthGreen),
+            cursorBrush = SolidColor(HealthAccent),
             textStyle = MaterialTheme.typography.bodyMedium.copy(
                 color = MaterialTheme.colorScheme.onSurface
             ),

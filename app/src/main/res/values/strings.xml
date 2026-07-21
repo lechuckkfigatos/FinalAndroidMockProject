@@ -54,6 +54,8 @@
     <string name="bmi_normal">Normal</string>
     <string name="bmi_overweight">Overweight</string>
     <string name="bmi_obese">Obese</string>
+    <string name="current_bmi">Current BMI</string>
+    <string name="bmi_waiting_for_body_info">Enter weight and height to see BMI.</string>
 
     <!-- Profile Validation Messages -->
     <string name="error_full_name_required">Full name is required</string>
@@ -171,6 +173,9 @@
     <!-- Settings -->
     <string name="settings_title">Settings</string>
     <string name="settings_subtitle">Customize your app preferences.</string>
+    <string name="edit_profile">Edit profile</string>
+    <string name="lifestyle_and_goal">Lifestyle and goal</string>
+    <string name="preferences">Preferences</string>
     <string name="language">Language</string>
     <string name="vietnamese">Vietnamese</string>
     <string name="english">English</string>
@@ -178,6 +183,16 @@
     <string name="theme_system">System</string>
     <string name="theme_light">Light</string>
     <string name="theme_dark">Dark</string>
+    <string name="theme_color">Theme color</string>
+    <string name="theme_color_green">Green</string>
+    <string name="theme_color_red">Red</string>
+    <string name="theme_color_yellow">Yellow</string>
+    <string name="theme_color_blue">Blue</string>
+    <string name="theme_color_purple">Purple</string>
+    <string name="font_size">Font size</string>
+    <string name="font_size_small">Small</string>
+    <string name="font_size_medium">Medium</string>
+    <string name="font_size_large">Large</string>
     <string name="settings_saved">Settings saved</string>
 
 </resources>

@@ -1,6 +1,8 @@
 package com.example.pftandroidmockproject.data.repository
 
 import com.example.pftandroidmockproject.data.local.datastore.SettingsDataStore
+import com.example.pftandroidmockproject.domain.model.setting.AppAccentColor
+import com.example.pftandroidmockproject.domain.model.setting.AppFontSize
 import com.example.pftandroidmockproject.domain.model.setting.AppLanguage
 import com.example.pftandroidmockproject.domain.model.setting.AppSettings
 import com.example.pftandroidmockproject.domain.model.setting.AppThemeMode
@@ -23,5 +25,13 @@ class SettingsRepositoryImpl @Inject constructor(
 
     override suspend fun updateThemeMode(themeMode: AppThemeMode) {
         settingsDataStore.updateThemeMode(themeMode)
+    }
+
+    override suspend fun updateFontSize(fontSize: AppFontSize) {
+        settingsDataStore.updateFontSize(fontSize)
+    }
+
+    override suspend fun updateAccentColor(accentColor: AppAccentColor) {
+        settingsDataStore.updateAccentColor(accentColor)
     }
 }

@@ -23,7 +23,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.example.pftandroidmockproject.R
 import com.example.pftandroidmockproject.presentation.dashboard.DashboardUiState
-import com.example.pftandroidmockproject.presentation.theme.HealthGreen
+import com.example.pftandroidmockproject.presentation.theme.HealthAccent
 
 @Composable
 fun DashboardAdviceCard(
@@ -55,13 +55,13 @@ fun DashboardAdviceCard(
     val accentColor = if (isOverTarget) {
         MaterialTheme.colorScheme.error
     } else {
-        HealthGreen
+        HealthAccent
     }
 
     val backgroundColor = if (isOverTarget) {
         MaterialTheme.colorScheme.errorContainer
     } else {
-        HealthGreen.copy(alpha = 0.10f)
+        HealthAccent.copy(alpha = 0.10f)
     }
 
     val contentColor = if (isOverTarget) {

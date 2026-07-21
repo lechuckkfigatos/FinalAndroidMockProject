@@ -26,7 +26,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.example.pftandroidmockproject.R
 import com.example.pftandroidmockproject.presentation.dashboard.DashboardUiState
-import com.example.pftandroidmockproject.presentation.theme.HealthGreen
+import com.example.pftandroidmockproject.presentation.theme.HealthAccent
 import java.text.NumberFormat
 import kotlin.math.roundToInt
 
@@ -47,7 +47,7 @@ fun CalorieProgressCard(
     val progressColor = if (uiState.remainingCalories < 0) {
         MaterialTheme.colorScheme.error
     } else {
-        HealthGreen
+        HealthAccent
     }
 
     val formattedIntake = remember(uiState.totalIntakeCalories) {
@@ -60,7 +60,7 @@ fun CalorieProgressCard(
         modifier = modifier.fillMaxWidth(),
         shape = RoundedCornerShape(20.dp),
         colors = CardDefaults.cardColors(
-            containerColor = Color.White
+            containerColor = MaterialTheme.colorScheme.surface
         ),
         elevation = CardDefaults.cardElevation(
             defaultElevation = 3.dp
@@ -171,7 +171,7 @@ fun CalorieProgressCard(
                     valueColor = if (uiState.remainingCalories < 0) {
                         MaterialTheme.colorScheme.error
                     } else {
-                        HealthGreen
+                        HealthAccent
                     },
                     modifier = Modifier.weight(1f)
                 )
@@ -196,8 +196,9 @@ private fun CalorieInformationBox(
     title: String,
     value: Int,
     modifier: Modifier = Modifier,
-    valueColor: Color = HealthGreen
+    valueColor: Color? = null
 ) {
+    val resolvedValueColor = valueColor ?: HealthAccent
     val formattedValue = remember(value) {
         NumberFormat
             .getIntegerInstance()
@@ -207,7 +208,7 @@ private fun CalorieInformationBox(
     Column(
         modifier = modifier
             .background(
-                color = valueColor.copy(alpha = 0.08f),
+                color = resolvedValueColor.copy(alpha = 0.08f),
                 shape = RoundedCornerShape(14.dp)
             )
             .padding(
@@ -226,7 +227,7 @@ private fun CalorieInformationBox(
             text = "$formattedValue ${stringResource(R.string.kcal)}",
             style = MaterialTheme.typography.titleMedium,
             fontWeight = FontWeight.Bold,
-            color = valueColor
+            color = resolvedValueColor
         )
     }
 }

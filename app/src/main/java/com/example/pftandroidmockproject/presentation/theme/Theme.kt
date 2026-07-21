@@ -1,57 +1,114 @@
 package com.example.pftandroidmockproject.presentation.theme
 
-import android.os.Build
+import android.content.res.Configuration
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
-import androidx.compose.material3.dynamicDarkColorScheme
-import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.runtime.SideEffect
+import androidx.compose.runtime.remember
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
+import com.example.pftandroidmockproject.domain.model.setting.AppAccentColor
+import com.example.pftandroidmockproject.domain.model.setting.AppFontSize
+import com.example.pftandroidmockproject.domain.model.setting.AppLanguage
+import com.example.pftandroidmockproject.domain.model.setting.AppThemeMode
+import java.util.Locale
 
-private val DarkColorScheme = darkColorScheme(
-    primary = Purple80,
-    secondary = PurpleGrey80,
-    tertiary = Pink80
+private fun darkAppColorScheme(palette: AccentPalette) = darkColorScheme(
+    primary = palette.primary,
+    onPrimary = palette.onPrimary,
+    secondary = palette.secondary,
+    tertiary = Color(0xFFE76F51),
+    background = Color(0xFF101815),
+    onBackground = Color(0xFFE5EEE9),
+    surface = Color(0xFF17211D),
+    onSurface = Color(0xFFE5EEE9),
+    surfaceVariant = Color(0xFF22302B),
+    onSurfaceVariant = Color(0xFFAAB7B1),
+    outlineVariant = Color(0xFF355346),
+    error = Color(0xFFFFB4AB)
 )
 
-private val LightColorScheme = lightColorScheme(
-    primary = Purple40,
-    secondary = PurpleGrey40,
-    tertiary = Pink40
-
-    /* Other default colors to override
+private fun lightAppColorScheme(palette: AccentPalette) = lightColorScheme(
+    primary = palette.primary,
+    onPrimary = palette.onPrimary,
+    secondary = palette.secondary,
+    tertiary = Color(0xFFE76F51),
     background = Color(0xFFFFFBFE),
     surface = Color(0xFFFFFBFE),
-    onPrimary = Color.White,
-    onSecondary = Color.White,
-    onTertiary = Color.White,
+    surfaceVariant = Color(0xFFF0F2F4),
     onBackground = Color(0xFF1C1B1F),
     onSurface = Color(0xFF1C1B1F),
-    */
+    onSurfaceVariant = Color(0xFF5F6B7A),
+    outlineVariant = Color(0xFFD6E5DC)
 )
 
 @Composable
 fun PFTAndroidMockProjectTheme(
-    darkTheme: Boolean = isSystemInDarkTheme(),
-    // Dynamic color is available on Android 12+
-    dynamicColor: Boolean = true,
+    language: AppLanguage = AppLanguage.VI,
+    themeMode: AppThemeMode = AppThemeMode.SYSTEM,
+    fontSize: AppFontSize = AppFontSize.MEDIUM,
+    accentColor: AppAccentColor = AppAccentColor.GREEN,
     content: @Composable () -> Unit
 ) {
-    val colorScheme = when {
-        dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
-            val context = LocalContext.current
-            if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
+    val context = LocalContext.current
+    val baseConfiguration = LocalConfiguration.current
+    val locale = remember(language) {
+        when (language) {
+            AppLanguage.EN -> Locale.ENGLISH
+            AppLanguage.VI -> Locale.forLanguageTag("vi")
         }
-
-        darkTheme -> DarkColorScheme
-        else -> LightColorScheme
     }
 
-    MaterialTheme(
-        colorScheme = colorScheme,
-        typography = Typography,
-        content = content
-    )
+    val localizedConfiguration = remember(
+        baseConfiguration,
+        locale
+    ) {
+        Configuration(baseConfiguration).apply {
+            setLocale(locale)
+        }
+    }
+
+    SideEffect {
+        Locale.setDefault(locale)
+        context.resources.updateConfiguration(
+            localizedConfiguration,
+            context.resources.displayMetrics
+        )
+    }
+
+    val darkTheme = when (themeMode) {
+        AppThemeMode.SYSTEM -> isSystemInDarkTheme()
+        AppThemeMode.LIGHT -> false
+        AppThemeMode.DARK -> true
+    }
+    val palette = remember(accentColor) {
+        accentPalette(accentColor)
+    }
+
+    val colorScheme = when {
+        darkTheme -> darkAppColorScheme(palette)
+        else -> lightAppColorScheme(palette)
+    }
+
+    val healthColors = if (darkTheme) {
+        darkHealthColors(palette)
+    } else {
+        lightHealthColors(palette)
+    }
+
+    CompositionLocalProvider(
+        LocalConfiguration provides localizedConfiguration,
+        LocalHealthColors provides healthColors
+    ) {
+        MaterialTheme(
+            colorScheme = colorScheme,
+            typography = appTypography(fontSize),
+            content = content
+        )
+    }
 }
