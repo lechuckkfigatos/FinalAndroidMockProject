@@ -6,7 +6,6 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
@@ -30,7 +29,6 @@ import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -45,16 +43,10 @@ import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
 import com.example.pftandroidmockproject.R
 import com.example.pftandroidmockproject.domain.model.meal.Food
-import com.example.pftandroidmockproject.domain.model.setting.LocalizedText
-import com.example.pftandroidmockproject.domain.model.meal.MealEntry
 import com.example.pftandroidmockproject.domain.model.meal.MealType
 import com.example.pftandroidmockproject.presentation.mapper.labelRes
-import com.example.pftandroidmockproject.presentation.profile.components.HealthTrackerHeader
 import com.example.pftandroidmockproject.presentation.meal.MealUiState
-import com.example.pftandroidmockproject.presentation.theme.HealthBackgroundTop
 import com.example.pftandroidmockproject.presentation.theme.HealthAccent
-import java.time.LocalDate
-import java.time.format.DateTimeFormatter
 
 @Composable
 fun AddFoodDialog(
