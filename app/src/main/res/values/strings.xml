@@ -81,14 +81,11 @@
     <string name="no_profile_found">No profile found. Please set up your profile first.</string>
     <string name="previous_day">Previous day</string>
     <string name="next_day">Next day</string>
-
     <string name="dashboard_title">Daily overview</string>
     <string name="dashboard_subtitle">Track your calorie intake and physical activity.</string>
-
     <string name="dashboard_summary_title">Today’s summary</string>
     <string name="dashboard_advice_title">Daily insight</string>
     <string name="dashboard_quick_actions">Quick actions</string>
-
     <string name="today">Today</string>
     <string name="back_to_today">Back to today</string>
 
@@ -97,7 +94,6 @@
     <string name="search_food">Search food</string>
     <string name="serving">Serving</string>
     <string name="calories_per_serving">Calories per serving</string>
-
     <string name="meal_log_title">Meal log</string>
     <string name="selected_date">Selected date</string>
     <string name="total_day_calories">Total day calories</string>
@@ -157,7 +153,7 @@
     <string name="burned">Burned</string>
     <string name="net">Net</string>
 
-    <!-- Meals -->
+    <!-- Meals screen -->
     <string name="meal_lunch">Lunch</string>
     <string name="meal_dinner">Dinner</string>
     <string name="meal_snack">Snack</string>
@@ -170,7 +166,7 @@
     <string name="full_name_hint">ENTER NAME</string>
     <string name="health_tracker">HEALTH TRACKER</string>
 
-    <!-- Settings -->
+    <!-- Settings screen -->
     <string name="settings_title">Settings</string>
     <string name="settings_subtitle">Customize your app preferences.</string>
     <string name="edit_profile">Edit profile</string>

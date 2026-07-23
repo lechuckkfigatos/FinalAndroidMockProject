@@ -6,6 +6,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.pftandroidmockproject.R
 import com.example.pftandroidmockproject.domain.model.activity.ActivityLevel
 import com.example.pftandroidmockproject.domain.model.profile.Gender
+import com.example.pftandroidmockproject.domain.model.profile.ProfileLimits
 import com.example.pftandroidmockproject.domain.model.profile.UserProfile
 import com.example.pftandroidmockproject.domain.model.setting.WeightGoal
 import com.example.pftandroidmockproject.domain.use_case.profile.CalculateBmiUseCase
@@ -215,8 +216,8 @@ class ProfileViewModel @Inject constructor(
         val heightCm = state.heightCm.toDoubleOrNull() ?: return null
 
         if (state.fullName.isBlank()) return null
-        if (weightKg <= 0) return null
-        if (heightCm <= 0) return null
+        if (weightKg <= 0 || weightKg > ProfileLimits.MAX_WEIGHT_KG) return null
+        if (heightCm < ProfileLimits.MIN_HEIGHT_CM) return null
 
         return UserProfile(
             id = 1,
@@ -247,12 +248,13 @@ class ProfileViewModel @Inject constructor(
             }
 
             state.weightKg.toDoubleOrNull() == null ||
-                    state.weightKg.toDoubleOrNull()!! <= 0 -> {
+                    state.weightKg.toDoubleOrNull()!! <= 0 ||
+                    state.weightKg.toDoubleOrNull()!! > ProfileLimits.MAX_WEIGHT_KG -> {
                 UiText.StringResource(R.string.error_weight_invalid)
             }
 
             state.heightCm.toDoubleOrNull() == null ||
-                    state.heightCm.toDoubleOrNull()!! <= 0 -> {
+                    state.heightCm.toDoubleOrNull()!! < ProfileLimits.MIN_HEIGHT_CM -> {
                 UiText.StringResource(R.string.error_height_invalid)
             }
 

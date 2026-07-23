@@ -6,6 +6,7 @@ import com.example.pftandroidmockproject.R
 import com.example.pftandroidmockproject.domain.calculator.BmiCalculator
 import com.example.pftandroidmockproject.domain.model.activity.ActivityLevel
 import com.example.pftandroidmockproject.domain.model.profile.Gender
+import com.example.pftandroidmockproject.domain.model.profile.ProfileLimits
 import com.example.pftandroidmockproject.domain.model.profile.UserProfile
 import com.example.pftandroidmockproject.domain.model.setting.AppAccentColor
 import com.example.pftandroidmockproject.domain.model.setting.AppFontSize
@@ -213,7 +214,13 @@ class SettingsViewModel @Inject constructor(
         val weightKg = weightKg.toDoubleOrNull()
         val heightCm = heightCm.toDoubleOrNull()
 
-        if (weightKg == null || heightCm == null || weightKg <= 0 || heightCm <= 0) {
+        if (
+            weightKg == null ||
+            heightCm == null ||
+            weightKg <= 0 ||
+            weightKg > ProfileLimits.MAX_WEIGHT_KG ||
+            heightCm < ProfileLimits.MIN_HEIGHT_CM
+        ) {
             return copy(
                 bmiValue = null,
                 bmiCategory = null
@@ -243,8 +250,8 @@ class SettingsViewModel @Inject constructor(
         val heightCm = state.heightCm.toDoubleOrNull() ?: return null
 
         if (state.fullName.isBlank()) return null
-        if (weightKg <= 0) return null
-        if (heightCm <= 0) return null
+        if (weightKg <= 0 || weightKg > ProfileLimits.MAX_WEIGHT_KG) return null
+        if (heightCm < ProfileLimits.MIN_HEIGHT_CM) return null
 
         return UserProfile(
             id = 1,
@@ -266,11 +273,12 @@ class SettingsViewModel @Inject constructor(
             state.dateOfBirth == null -> UiText.StringResource(R.string.error_birth_date_required)
             state.gender == null -> UiText.StringResource(R.string.error_gender_required)
             state.weightKg.toDoubleOrNull() == null ||
-                    state.weightKg.toDoubleOrNull()!! <= 0 -> {
+                    state.weightKg.toDoubleOrNull()!! <= 0 ||
+                    state.weightKg.toDoubleOrNull()!! > ProfileLimits.MAX_WEIGHT_KG -> {
                 UiText.StringResource(R.string.error_weight_invalid)
             }
             state.heightCm.toDoubleOrNull() == null ||
-                    state.heightCm.toDoubleOrNull()!! <= 0 -> {
+                    state.heightCm.toDoubleOrNull()!! < ProfileLimits.MIN_HEIGHT_CM -> {
                 UiText.StringResource(R.string.error_height_invalid)
             }
             state.activityLevel == null -> UiText.StringResource(R.string.error_activity_level_required)

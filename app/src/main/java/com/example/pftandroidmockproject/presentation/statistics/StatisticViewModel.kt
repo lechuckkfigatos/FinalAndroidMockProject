@@ -6,7 +6,6 @@ import com.example.pftandroidmockproject.domain.use_case.statistic.GetWeeklyStat
 import dagger.hilt.android.lifecycle.HiltViewModel
 import java.time.LocalDate
 import javax.inject.Inject
-import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -23,28 +22,12 @@ class StatisticsViewModel @Inject constructor(
     private val _uiState = MutableStateFlow(StatisticsUiState())
     val uiState: StateFlow<StatisticsUiState> = _uiState.asStateFlow()
 
-    private var statisticsJob: Job? = null
-
     init {
-        observeWeeklyStatistics(LocalDate.now())
+        observeRecentStatistics()
     }
 
-    fun onPreviousWeekClick() {
-        val newEndDate = _uiState.value.endDate.minusWeeks(1)
-        observeWeeklyStatistics(newEndDate)
-    }
-
-    fun onNextWeekClick() {
-        val newEndDate = _uiState.value.endDate.plusWeeks(1)
-        observeWeeklyStatistics(newEndDate)
-    }
-
-    fun onCurrentWeekClick() {
-        observeWeeklyStatistics(LocalDate.now())
-    }
-
-    private fun observeWeeklyStatistics(endDate: LocalDate) {
-        statisticsJob?.cancel()
+    private fun observeRecentStatistics() {
+        val endDate = LocalDate.now()
 
         _uiState.update {
             it.copy(
@@ -54,7 +37,7 @@ class StatisticsViewModel @Inject constructor(
             )
         }
 
-        statisticsJob = getWeeklyStatisticsUseCase(endDate)
+        getWeeklyStatisticsUseCase(endDate)
             .catch { throwable ->
                 _uiState.update {
                     it.copy(

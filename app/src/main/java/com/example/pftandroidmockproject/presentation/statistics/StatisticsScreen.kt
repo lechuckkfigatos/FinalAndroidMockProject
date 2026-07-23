@@ -14,7 +14,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
@@ -30,9 +29,6 @@ import com.example.pftandroidmockproject.presentation.statistics.components.Week
 import com.example.pftandroidmockproject.presentation.theme.HealthBackgroundBottom
 import com.example.pftandroidmockproject.presentation.theme.HealthBackgroundTop
 
-private val BurnedOrange = Color(0xFFE76F51)
-private val ChartGridColor = Color(0xFFE7ECEF)
-
 @Composable
 fun StatisticsScreen(
     viewModel: StatisticsViewModel = hiltViewModel()
@@ -40,19 +36,13 @@ fun StatisticsScreen(
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
 
     StatisticsContent(
-        uiState = uiState,
-        onPreviousWeekClick = viewModel::onPreviousWeekClick,
-        onNextWeekClick = viewModel::onNextWeekClick,
-        onCurrentWeekClick = viewModel::onCurrentWeekClick
+        uiState = uiState
     )
 }
 
 @Composable
 private fun StatisticsContent(
-    uiState: StatisticsUiState,
-    onPreviousWeekClick: () -> Unit,
-    onNextWeekClick: () -> Unit,
-    onCurrentWeekClick: () -> Unit
+    uiState: StatisticsUiState
 ) {
     Box(
         modifier = Modifier
@@ -91,10 +81,7 @@ private fun StatisticsContent(
                     StatisticsWeekCard(
                         endDate = uiState.endDate,
                         totalIntakeCalories = uiState.totalIntakeCalories,
-                        totalBurnedCalories = uiState.totalBurnedCalories,
-                        onPreviousWeekClick = onPreviousWeekClick,
-                        onNextWeekClick = onNextWeekClick,
-                        onCurrentWeekClick = onCurrentWeekClick
+                        totalBurnedCalories = uiState.totalBurnedCalories
                     )
                 }
 

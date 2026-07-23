@@ -261,7 +261,7 @@ fun ActivityTypeRow(
             containerColor = if (isSelected) {
                 HealthAccent.copy(alpha = 0.13f)
             } else {
-                Color(0xFFF4F7F5)
+                MaterialTheme.colorScheme.surfaceVariant
             }
         ),
         border = BorderStroke(
