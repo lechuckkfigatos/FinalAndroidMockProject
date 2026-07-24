@@ -1,6 +1,10 @@
 package com.example.pftandroidmockproject.presentation.theme
 
+import android.content.Context
+import android.content.ContextWrapper
+import android.content.res.AssetManager
 import android.content.res.Configuration
+import android.content.res.Resources
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
@@ -47,6 +51,19 @@ private fun lightAppColorScheme(palette: AccentPalette) = lightColorScheme(
     outlineVariant = Color(0xFFD6E5DC)
 )
 
+private class LocalizedContextWrapper(
+    base: Context,
+    private val localizedContext: Context
+) : ContextWrapper(base) {
+    override fun getAssets(): AssetManager {
+        return localizedContext.assets
+    }
+
+    override fun getResources(): Resources {
+        return localizedContext.resources
+    }
+}
+
 @Composable
 fun PFTAndroidMockProjectTheme(
     language: AppLanguage = AppLanguage.VI,
@@ -73,12 +90,18 @@ fun PFTAndroidMockProjectTheme(
         }
     }
 
+    val localizedContext = remember(
+        context,
+        localizedConfiguration
+    ) {
+        LocalizedContextWrapper(
+            base = context,
+            localizedContext = context.createConfigurationContext(localizedConfiguration)
+        )
+    }
+
     SideEffect {
         Locale.setDefault(locale)
-        context.resources.updateConfiguration(
-            localizedConfiguration,
-            context.resources.displayMetrics
-        )
     }
 
     val darkTheme = when (themeMode) {
@@ -102,6 +125,7 @@ fun PFTAndroidMockProjectTheme(
     }
 
     CompositionLocalProvider(
+        LocalContext provides localizedContext,
         LocalConfiguration provides localizedConfiguration,
         LocalHealthColors provides healthColors
     ) {
